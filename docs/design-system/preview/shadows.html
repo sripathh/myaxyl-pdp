@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+body{margin:0;padding:32px;background:#F9F8F3;font-family:var(--sans);}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.card{background:#fff;border-radius:10px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;min-height:90px;}
+.tok{font-size:10px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:rgba(25,29,24,0.6);}
+.val{font-size:10px;color:rgba(25,29,24,0.5);margin-top:4px;}
+.tint-neutral{box-shadow:0 1px 2px rgba(0,0,0,0.05);}
+.tint-neutral-md{box-shadow:0 2px 12px rgba(0,0,0,0.08);}
+.tint-green{box-shadow:0 8px 32px rgba(30,75,60,0.12);}
+.tint-rust{box-shadow:0 2px 8px rgba(134,78,58,0.25);}
+.tint-header{box-shadow:0 2px 20px rgba(30,75,60,0.06);}
+.tint-sticky{box-shadow:0 -4px 24px rgba(30,75,60,0.10);}
+</style></head>
+<body>
+<div class="grid">
+  <div class="card tint-neutral"><div class="tok">shadow-sm</div><div class="val">cards at rest · arrows</div></div>
+  <div class="card tint-neutral-md"><div class="tok">shadow-md</div><div class="val">thumb tray</div></div>
+  <div class="card tint-green"><div class="tok">shadow-lg (green)</div><div class="val">menu panel</div></div>
+  <div class="card tint-rust"><div class="tok">CTA (rust)</div><div class="val">ATC only</div></div>
+  <div class="card tint-header"><div class="tok">header sticky</div><div class="val">subtle green</div></div>
+  <div class="card tint-sticky"><div class="tok">sticky upward</div><div class="val">desktop buy bar</div></div>
+</div>
+</body></html>

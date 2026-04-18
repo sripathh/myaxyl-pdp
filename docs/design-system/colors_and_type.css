@@ -1,0 +1,295 @@
+/* ============================================================
+   Kerala Ayurveda — Colors & Type tokens
+   Extracted from the Neelibhringadi Keram PDP prototype.
+   Use these variables for any new KAL Global surface.
+   ============================================================ */
+
+/* ---------- FONTS ---------- */
+@font-face{font-family:'Amstir';src:url('fonts/Amstir-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:'Avenir';src:url('fonts/Avenir-Roman.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:'Avenir';src:url('fonts/Avenir-Oblique.woff2') format('woff2');font-weight:400;font-style:italic;font-display:swap;}
+@font-face{font-family:'Avenir';src:url('fonts/Avenir-Medium.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap;}
+@font-face{font-family:'Avenir';src:url('fonts/Avenir-MediumOblique.woff2') format('woff2');font-weight:500;font-style:italic;font-display:swap;}
+@font-face{font-family:'Avenir';src:url('fonts/Avenir-Heavy.woff2') format('woff2');font-weight:800;font-style:normal;font-display:swap;}
+@font-face{font-family:'Avenir';src:url('fonts/Avenir-HeavyOblique.woff2') format('woff2');font-weight:800;font-style:italic;font-display:swap;}
+@font-face{font-family:'Avenir';src:url('fonts/Avenir-Black.woff2') format('woff2');font-weight:900;font-style:normal;font-display:swap;}
+
+:root{
+  /* ========== CORE PALETTE ========== */
+  --green:#1E4B3C;              /* Primary brand anchor */
+  --green-deep:#15803D;         /* Accent green — testimonial tags */
+  --green-dark:#0F3A2E;         /* High-contrast accent */
+  --green-gallery:#435a45;      /* Gallery column bg */
+  --green-stats:#364837;        /* Stats bar bg */
+  --green-honest:#2A4A3D;       /* "Honest sequence" / compare Us */
+
+  --cream:#F9F8F3;              /* Primary surface */
+  --cream-bg:#FDFCF8;           /* Page body, slightly lighter */
+  --white:#FFFFFF;
+
+  --off-yellow:#FEF9E7;         /* Luxury accent on dark green */
+  --off-yellow-border:rgba(253,230,138,0.5);
+
+  --brown:#793A24;              /* Eyebrow — mechanism/ingredients/milks */
+  --cinnamon:#7A5900;           /* Eyebrow — timeline/reviews */
+  --rust:#864E3A;               /* Primary CTA (ATC) bg */
+  --rust-dark:#743F2E;          /* ATC hover */
+  --amber:#FBBF24;              /* Star ratings, amber accents */
+  --amber-dark:#F59E0B;         /* Amber hover */
+
+  /* Ritual guide */
+  --ritual-bg:#FEF9E7;
+  --ritual-border:rgba(253,230,138,0.5);
+  --ritual-label:#B45309;
+  --ritual-text:#78350F;
+
+  /* What's in / What's out */
+  --pale-green:#F0FDF4;
+  --pale-green-border:#DCFCE7;
+  --pale-red:#FEF6F6;
+  --pale-red-border:#FEE2E2;
+  --negative:#991B1B;
+
+  /* ========== INK (text on light) ========== */
+  --ink:#191D18;                /* Near-black primary */
+  --ink-80:rgba(25,29,24,0.8);  /* Body */
+  --ink-70:rgba(25,29,24,0.7);  /* Secondary body */
+  --ink-60:rgba(25,29,24,0.6);  /* Tertiary */
+  --ink-40:rgba(25,29,24,0.4);  /* Disclaimers */
+  --ink-30:rgba(25,29,24,0.3);  /* Subtle muted */
+
+  /* ========== BORDERS ========== */
+  --border-soft:rgba(192,200,195,0.25);
+  --border-cell:rgba(192,200,195,0.4);
+  --border-on-dark:rgba(255,255,255,0.15);
+  --border-on-dark-soft:rgba(255,255,255,0.1);
+
+  /* ========== EXTENDED PALETTE (Base Palette 2) ========== */
+  --bhoomi-green:#3d5b43;
+  --wild-sage:#b1ba93;
+  --cotton-bloom:#f9f4ef;
+  --deep-river:#2d3669;
+  --chandan-soil:#97634b;
+  --burnt-nectar:#82351d;
+
+  /* ========== INGREDIENT ROLE COLORS ========== */
+  --role-growth-bg:rgba(34,197,94,0.2);
+  --role-growth-fg:#16a34a;
+  --role-recovery-bg:rgba(59,130,246,0.2);
+  --role-recovery-fg:#2563eb;
+  --role-strength-bg:rgba(245,158,11,0.2);
+  --role-strength-fg:#d97706;
+  --role-nourish-bg:rgba(232,193,122,0.25);
+  --role-nourish-fg:#b8860b;
+
+  /* ========== SHADOWS ========== */
+  --shadow-sm:0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md:0 2px 12px rgba(0,0,0,0.08);
+  --shadow-lg:0 8px 32px rgba(30,75,60,0.12);
+  --shadow-cta:0 2px 8px rgba(134,78,58,0.25);
+  --shadow-header:0 2px 20px rgba(30,75,60,0.06);
+  --shadow-sticky-up:0 -4px 24px rgba(30,75,60,0.10);
+
+  /* ========== RADII ========== */
+  --r-xs:3px;     /* Testimonial tags */
+  --r-sm:6px;     /* Gallery thumbnail */
+  --r-md:8px;     /* Cards, accordion */
+  --r-lg:10px;    /* ATC, ritual guide, thumbnails */
+  --r-xl:12px;    /* Cross-sell, milk cards, compare col */
+  --r-pill:999px; /* Badges */
+
+  /* ========== FONTS ========== */
+  --serif:"Amstir", "Cormorant Garamond", Georgia, serif;
+  --sans:"Avenir", "Avenir Next", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+
+  /* ========== TYPE TOKENS ========== */
+  /* Display */
+  --fs-h1:35px;         /* Product name (mobile) */
+  --fs-h1-lg:44px;      /* Product name (desktop) */
+  --fs-h2:24px;         /* Standard section H2 mobile */
+  --fs-h2-lg:30px;      /* Section H2 desktop */
+  --fs-h2-xl:36px;      /* Mechanism desktop */
+
+  /* Body */
+  --fs-body-lg:16px;    /* Standard body */
+  --fs-body:15px;       /* Narrower body */
+  --fs-small:12px;      /* Card descriptions, meta */
+  --fs-micro:10px;      /* Gallery badge, stats label */
+
+  /* Labels / eyebrows */
+  --fs-eyebrow:12px;
+  --fs-label:11px;
+  --fs-badge:10px;
+
+  /* Letter-spacing */
+  --tracking-tight:-0.35px;   /* Large serif */
+  --tracking-milk:-0.14px;    /* Milk names */
+  --tracking-body:0;
+  --tracking-meta:0.5px;
+  --tracking-cta:1px;
+  --tracking-badge:1.2px;
+  --tracking-nav:1.44px;
+  --tracking-eyebrow:2px;
+  --tracking-eyebrow-xl:2.8px;
+
+  /* Line height */
+  --lh-tight:1.15;
+  --lh-snug:1.3;
+  --lh-normal:1.45;
+  --lh-relaxed:1.6;
+
+  /* ========== FROSTED / ALPHA SURFACES ========== */
+  /* Header frosted glass */
+  --header-bg:rgba(253,252,248,0.92);
+
+  /* Gallery arrows + thumb tray */
+  --glass-85:rgba(255,255,255,0.85);
+  --glass-92:rgba(255,255,255,0.92);
+
+  /* White alphas (borders on dark, icon overlays) */
+  --white-05:rgba(255,255,255,0.05);
+  --white-10:rgba(255,255,255,0.10);
+  --white-15:rgba(255,255,255,0.15);
+  --white-20:rgba(255,255,255,0.20);
+
+  /* Off-yellow alphas (honest sequence, ritual borders) */
+  --off-yellow-40:rgba(254,249,231,0.40);
+  --off-yellow-75:rgba(254,249,231,0.75);
+
+  /* Green alphas (subtle section tints) */
+  --green-06:rgba(30,75,60,0.06);
+  --green-08:rgba(30,75,60,0.08);
+  --green-10:rgba(30,75,60,0.10);
+
+  /* Amber alphas (cross-sell accent, timeline border bg) */
+  --amber-20:rgba(251,191,36,0.20);
+  --amber-30:rgba(251,191,36,0.30);
+
+  /* Closing section light text */
+  --closing-text:rgba(248,245,236,0.60);
+
+  /* Motion */
+  --dur-press:0.1s;
+  --dur-hover:0.2s;
+  --dur-menu:0.3s;
+  --dur-fade:0.4s;
+  --ease:ease;
+}
+
+/* ========== SEMANTIC ELEMENT STYLES ========== */
+html{scroll-behavior:smooth;}
+
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:var(--fs-body-lg);
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  font-weight:400;
+}
+
+/* --- Headings. Amstir is SINGLE-WEIGHT; hierarchy through size only. --- */
+h1, .h1{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:var(--fs-h1);
+  color:var(--green);
+  line-height:var(--lh-tight);
+  letter-spacing:var(--tracking-tight);
+  margin:0;
+}
+@media (min-width:1024px){ h1,.h1{ font-size:var(--fs-h1-lg);} }
+
+h2, .h2{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:var(--fs-h2);
+  color:var(--green);
+  line-height:var(--lh-snug);
+  letter-spacing:-0.2px;
+  margin:0;
+}
+@media (min-width:1024px){ h2,.h2{ font-size:var(--fs-h2-lg);} }
+
+h3, .h3{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:20px;
+  color:var(--green);
+  line-height:var(--lh-tight);
+  margin:0;
+}
+
+/* Editorial sans italic for subtitles/quotes */
+.subtitle{
+  font-family:var(--sans);
+  font-style:italic;
+  color:rgba(30,75,60,0.8);
+  font-size:18px;
+  line-height:var(--lh-snug);
+}
+
+/* Eyebrow (section label above headline) */
+.eyebrow{
+  font-family:var(--sans);
+  font-size:var(--fs-eyebrow);
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:var(--tracking-eyebrow);
+  color:var(--brown);
+}
+.eyebrow--cinnamon{ color:var(--cinnamon); }
+
+/* Body */
+p, .body{
+  font-family:var(--sans);
+  font-size:var(--fs-body-lg);
+  line-height:var(--lh-relaxed);
+  color:var(--ink-80);
+  margin:0;
+}
+.body--sm{ font-size:var(--fs-small); color:var(--ink-70); line-height:1.5; }
+
+/* Labels — uppercase w/ tracking */
+.label{
+  font-family:var(--sans);
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:var(--tracking-cta);
+  font-size:var(--fs-label);
+  color:var(--ink-60);
+}
+
+/* CTA text */
+.cta-text{
+  font-family:var(--sans);
+  font-weight:900;
+  font-size:16px;
+  text-transform:uppercase;
+  letter-spacing:var(--tracking-cta);
+}
+
+/* Price (display) */
+.price{
+  font-family:var(--sans);
+  font-weight:900;
+  font-size:22px;
+  letter-spacing:0;
+  color:var(--ink);
+}
+@media (min-width:1024px){ .price{ font-size:28px; } }
+
+/* Nav link */
+.nav-link{
+  font-family:var(--sans);
+  font-size:12px;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:var(--tracking-nav);
+  color:var(--ink);
+  opacity:.6;
+  transition:opacity var(--dur-hover) var(--ease);
+}
+.nav-link:hover{ opacity:1; }

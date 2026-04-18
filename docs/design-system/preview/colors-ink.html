@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+body{margin:0;padding:24px;background:#fff;font-family:var(--sans);}
+.stack{display:flex;flex-direction:column;gap:8px;}
+.row{display:flex;align-items:center;gap:16px;padding:10px 14px;border-radius:6px;}
+.chip{width:48px;height:24px;border-radius:4px;flex:0 0 auto;}
+.label{font-size:12px;color:#191D18;font-weight:500;flex:1;}
+.hex{font-size:11px;font-weight:800;letter-spacing:0.8px;text-transform:uppercase;color:rgba(25,29,24,0.6);}
+</style></head>
+<body>
+<div class="stack">
+  <div class="row" style="background:#F9F8F3;"><div class="chip" style="background:#191D18;"></div><span class="label">Ink — primary text</span><span class="hex">#191D18</span></div>
+  <div class="row" style="background:#F9F8F3;"><div class="chip" style="background:rgba(25,29,24,0.8);"></div><span class="label">Ink 80 — body</span><span class="hex">80%</span></div>
+  <div class="row" style="background:#F9F8F3;"><div class="chip" style="background:rgba(25,29,24,0.7);"></div><span class="label">Ink 70 — secondary</span><span class="hex">70%</span></div>
+  <div class="row" style="background:#F9F8F3;"><div class="chip" style="background:rgba(25,29,24,0.6);"></div><span class="label">Ink 60 — tertiary / labels</span><span class="hex">60%</span></div>
+  <div class="row" style="background:#F9F8F3;"><div class="chip" style="background:rgba(25,29,24,0.4);"></div><span class="label">Ink 40 — disclaimers</span><span class="hex">40%</span></div>
+</div>
+</body></html>

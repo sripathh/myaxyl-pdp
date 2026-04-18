@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+body{margin:0;padding:24px;background:#FDFCF8;font-family:var(--sans);display:flex;flex-direction:column;gap:18px;}
+.ritual{background:#FEF9E7;border:1px solid rgba(253,230,138,0.5);border-radius:10px;padding:16px;display:flex;gap:14px;align-items:flex-start;}
+.ritual__icon{width:32px;height:32px;background:rgba(251,191,36,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.ritual__icon img{width:20px;height:20px;}
+.ritual__label{color:#B45309;font-size:11px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:4px;}
+.ritual__text{color:#78350F;font-size:16px;font-style:italic;line-height:1.4;}
+.trust{background:#F9F8F3;display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid rgba(192,200,195,0.25);border-bottom:1px solid rgba(192,200,195,0.25);padding:12px 8px;}
+.trust__cell{text-align:center;border-right:1px solid rgba(192,200,195,0.4);padding:4px;}
+.trust__cell:last-child{border-right:none;}
+.trust__num{font-family:var(--serif);font-size:14px;font-weight:600;color:#1E4B3C;line-height:1.05;}
+.trust__label{font-size:8px;font-weight:800;letter-spacing:0.6px;text-transform:uppercase;color:rgba(25,29,24,0.6);margin-top:3px;line-height:1;}
+</style></head>
+<body>
+<div class="ritual">
+  <div class="ritual__icon"><img src="../assets/ritual.svg"></div>
+  <div><div class="ritual__label">The Ritual</div><div class="ritual__text">Thirty minutes, three times a week. Warm, massage, leave, rinse.</div></div>
+</div>
+<div class="trust">
+  <div class="trust__cell"><div class="trust__num">1945</div><div class="trust__label">Est.</div></div>
+  <div class="trust__cell"><div class="trust__num">GMP</div><div class="trust__label">Certified</div></div>
+  <div class="trust__cell"><div class="trust__num">ISO</div><div class="trust__label">Certified</div></div>
+  <div class="trust__cell"><div class="trust__num">FDA</div><div class="trust__label">Compliant</div></div>
+  <div class="trust__cell"><div class="trust__num">AYUSH</div><div class="trust__label">Licensed</div></div>
+</div>
+</body></html>
