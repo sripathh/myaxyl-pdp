@@ -1,0 +1,568 @@
+/* ============================================================
+   Myaxyl Oil — PDP overrides (additive only)
+   Loaded after: ../design-system/colors_and_type.css
+                 ../design-system/ui_kits/pdp/pdp.css
+   ============================================================ */
+
+/* ---------- PLACEHOLDER TILES (flagged dependency) ---------- */
+.placeholder-tile{
+  background:var(--cream);
+  border:1px solid var(--border-soft);
+  aspect-ratio:1/1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:var(--serif);
+  font-style:italic;
+  color:var(--ink-60);
+  font-size:13px;
+  text-align:center;
+  padding:8px;
+}
+.placeholder-tile--timeline{ aspect-ratio:auto; width:112px; height:96px; border-radius:8px; border-color:var(--amber); }
+.placeholder-tile--circle{ border-radius:50%; aspect-ratio:1/1; width:80px; height:80px; border:1px solid var(--border-cell); }
+.placeholder-tile--wide{ aspect-ratio:21/9; width:100%; max-width:1100px; margin:0 auto 24px; border-radius:12px; }
+
+/* ---------- GALLERY: 6-slide flag pill ---------- */
+.gallery__flag{
+  position:absolute;
+  top:16px;
+  left:16px;
+  z-index:2;
+  background:var(--green);
+  color:var(--off-yellow);
+  font-family:var(--sans);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  padding:7px 12px;
+  border-radius:999px;
+}
+
+/* ---------- PRODUCT INFO additions ---------- */
+.info__rating{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.info__rating-stars{ display:flex; gap:2px; }
+.info__rating-stars img{ width:14px; height:14px; }
+.info__rating-text{
+  font-size:13px;
+  font-weight:700;
+  color:var(--ink-70);
+  letter-spacing:.2px;
+}
+
+/* Micro-testimonial with amber left-border */
+.microquote{
+  margin:0;
+  padding:12px 14px;
+  border-left:3px solid var(--amber);
+  background:rgba(251,191,36,0.07);
+  border-radius:0 6px 6px 0;
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:15px;
+  line-height:1.45;
+  color:var(--ink-80);
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.microquote cite{
+  font-family:var(--sans);
+  font-style:normal;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.8px;
+  text-transform:uppercase;
+  color:var(--ink-60);
+}
+
+/* ---------- SIZE SELECTOR ---------- */
+.size-select{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.size-select__opt{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:4px;
+  background:var(--white);
+  border:1px solid var(--border-cell);
+  border-radius:var(--r-md);
+  padding:12px 14px;
+  cursor:pointer;
+  transition:border-color var(--dur-hover) var(--ease), background var(--dur-hover) var(--ease);
+  font-family:var(--sans);
+  text-align:left;
+}
+.size-select__opt:hover{ background:var(--cream); }
+.size-select__opt.is-selected{
+  border:1.5px solid var(--green);
+  background:rgba(30,75,60,0.04);
+}
+.size-select__name{
+  font-family:var(--serif);
+  font-size:18px;
+  color:var(--green);
+  line-height:1;
+}
+.size-select__price{
+  font-family:var(--sans);
+  font-weight:900;
+  font-size:15px;
+  color:var(--ink);
+  display:flex;
+  align-items:baseline;
+  gap:6px;
+}
+.size-select__old{
+  font-weight:700;
+  font-size:12px;
+  text-decoration:line-through;
+  color:var(--ink-40);
+}
+.size-select__note{
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:var(--ink-60);
+}
+
+/* ---------- REGIMEN STRIP (Zone 1 dual partner) ---------- */
+.regimen{
+  background:var(--rust);
+  color:var(--white);
+  padding:24px 20px;
+}
+@media (min-width:768px){ .regimen{ padding:32px 40px; } }
+@media (min-width:1024px){ .regimen{ padding:40px 64px; } }
+.regimen__label{
+  font-family:var(--sans);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1.8px;
+  text-transform:uppercase;
+  color:var(--off-yellow);
+  margin-bottom:14px;
+}
+.regimen__grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+  max-width:1100px;
+  margin:0 auto;
+}
+@media (min-width:768px){ .regimen__grid{ grid-template-columns:1fr 1fr; gap:16px; } }
+.regimen-card{
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:var(--r-xl);
+  padding:14px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.regimen-card__img{
+  width:64px;
+  height:64px;
+  border-radius:var(--r-md);
+  overflow:hidden;
+  border:1px solid var(--amber);
+  background:#fff;
+  flex:0 0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.regimen-card__img img{ width:100%; height:100%; object-fit:contain; }
+.regimen-card__body{ flex:1; min-width:0; }
+.regimen-card__title{
+  font-family:var(--sans);
+  font-size:14px;
+  font-weight:900;
+  letter-spacing:.3px;
+  line-height:1.15;
+  margin-bottom:3px;
+}
+.regimen-card__desc{
+  font-size:12px;
+  color:rgba(255,255,255,0.72);
+  line-height:1.35;
+}
+.regimen-card__add{
+  background:var(--amber);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-weight:900;
+  font-size:13px;
+  padding:10px 14px;
+  border-radius:var(--r-md);
+  border:none;
+  cursor:pointer;
+  transition:background var(--dur-hover) var(--ease);
+  white-space:nowrap;
+}
+.regimen-card__add:hover{ background:var(--amber-dark); }
+.regimen-card__add.is-added{ background:var(--green); color:var(--off-yellow); }
+
+/* ---------- SENSORY CALLOUT ---------- */
+.sensory{
+  background:var(--cream);
+  padding:48px 24px;
+  text-align:center;
+}
+@media (min-width:1024px){ .sensory{ padding:72px 40px; } }
+.sensory .eyebrow{ margin-bottom:12px; }
+.sensory__title{
+  font-family:var(--serif);
+  font-size:24px;
+  font-weight:400;
+  color:var(--green);
+  letter-spacing:-0.2px;
+  margin:0 0 16px;
+}
+@media (min-width:1024px){ .sensory__title{ font-size:30px; } }
+.sensory__body{
+  max-width:720px;
+  margin:0 auto 24px;
+  font-size:16px;
+  line-height:1.7;
+  color:var(--ink-80);
+}
+.sensory__quote{
+  max-width:560px;
+  margin:0 auto;
+  text-align:left;
+}
+
+/* ---------- HONEST SEQUENCE refinement ---------- */
+/* Background flipped to white — the green zone is now the timeline-banner below */
+.honest{ background:var(--white); color:var(--ink); padding:36px 24px; }
+@media (min-width:1024px){ .honest{ padding:56px 40px; } }
+.honest__title{ font-size:30px; color:var(--green); }
+@media (min-width:1024px){ .honest__title{ font-size:44px; } }
+.honest__sub{ color:var(--ink-70); }
+
+/* ---------- TIMELINE BANNER (dark green header zone) ---------- */
+.timeline-banner{
+  background:var(--green);
+  padding:40px 24px 32px;
+  text-align:center;
+}
+@media (min-width:1024px){ .timeline-banner{ padding:56px 40px 40px; } }
+.timeline-banner .eyebrow--cinnamon{ color:rgba(254,249,231,0.55); }
+.timeline-banner__h2{
+  font-family:var(--serif);
+  font-size:24px;
+  font-weight:400;
+  color:var(--off-yellow);
+  letter-spacing:-0.2px;
+  margin:0;
+}
+@media (min-width:1024px){ .timeline-banner__h2{ font-size:30px; } }
+
+/* ---------- TIMELINE refinement ---------- */
+/* Header lives in .timeline-banner above — timeline section is cards only */
+@media (max-width:767px){ .timeline{ padding-top:28px; } }
+
+/* ---------- INGREDIENTS (Myaxyl layout) ---------- */
+.ingredients__header{ margin-bottom:28px; }
+.ingredients__header .eyebrow{ margin-bottom:10px; }
+.ingredients__h2{
+  font-family:var(--serif);
+  font-size:24px;
+  font-weight:400;
+  color:var(--green);
+  letter-spacing:-0.2px;
+  margin:0;
+}
+@media (min-width:1024px){ .ingredients__h2{ font-size:30px; } }
+
+/* Override the kit's background-image selectors (not applicable for Myaxyl) */
+.ing-card--myx{ grid-template-columns:113px 1fr !important; }
+@media (min-width:768px){ .ing-card--myx{ display:block !important; } }
+.ing-card--myx .ing-card__img{
+  background:var(--cream);
+}
+.ing-card--myx .ing-card__img span{
+  font-family:var(--serif);
+  font-style:italic;
+  color:var(--ink-60);
+  font-size:13px;
+}
+.ing-card--myx .ing-card__body{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  align-items:flex-start;
+  padding:16px 20px;
+}
+@media (min-width:768px){ .ing-card--myx .ing-card__body{ align-items:center; text-align:center; padding:20px; } }
+.ing-card__role{
+  display:inline-block;
+  font-family:var(--sans);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+  padding:4px 10px;
+  border-radius:999px;
+}
+.ing-card__latin{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:13px;
+  color:var(--ink-60);
+}
+
+/* Role badge colors */
+.role--pain-relief{
+  background:var(--role-recovery-bg);
+  color:var(--role-recovery-fg);
+}
+.role--anti-inflammatory{
+  background:var(--role-strength-bg);
+  color:var(--role-strength-fg);
+}
+.role--recovery{
+  background:var(--role-growth-bg);
+  color:var(--role-growth-fg);
+}
+.role--absorption{
+  background:var(--role-nourish-bg);
+  color:var(--role-nourish-fg);
+}
+
+/* ---------- SESAME OIL BASE ---------- */
+.sesame{
+  background:var(--white);
+  padding:48px 24px;
+  text-align:center;
+}
+@media (min-width:1024px){ .sesame{ padding:80px 40px; } }
+.sesame__header{ margin-bottom:36px; }
+.sesame__header .eyebrow{ margin-bottom:10px; }
+.sesame__h2{
+  font-family:var(--serif);
+  font-size:24px;
+  font-weight:400;
+  color:var(--green);
+  letter-spacing:-0.2px;
+  margin:0 0 16px;
+}
+@media (min-width:1024px){ .sesame__h2{ font-size:30px; } }
+.sesame__intro{
+  max-width:520px;
+  margin:0 auto;
+  font-size:15px;
+  color:var(--ink-70);
+  line-height:1.6;
+}
+.sesame__grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:16px;
+  max-width:1100px;
+  margin:0 auto;
+}
+@media (min-width:768px){ .sesame__grid{ grid-template-columns:1.6fr 1fr 1fr; gap:20px; align-items:stretch; } }
+.sesame-card{
+  background:var(--cream);
+  border:1px solid var(--border-soft);
+  border-radius:var(--r-xl);
+  padding:28px 20px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:14px;
+}
+.sesame-card--hero{
+  background:rgba(30,75,60,0.04);
+  border-color:var(--border-cell);
+}
+.sesame-card__icon{
+  flex:0 0 auto;
+}
+.sesame-card__name{
+  font-family:var(--serif);
+  font-size:22px;
+  font-weight:400;
+  color:var(--green);
+  margin:0;
+  letter-spacing:-0.2px;
+}
+.sesame-card--hero .sesame-card__name{ font-size:26px; }
+.sesame-card__desc{
+  font-size:13px;
+  color:var(--ink-70);
+  line-height:1.55;
+  margin:0;
+}
+
+/* ---------- WHAT'S IN header eyebrow integration ---------- */
+.whats-in .eyebrow{ margin-bottom:10px; display:block; }
+.whats-in__title{ margin-top:0; }
+
+/* ---------- TESTIMONIALS (Myaxyl: timeframe tag with amber top-border) ---------- */
+.testimonial--myx{
+  padding-left:0;
+  border-left:none;
+  padding:24px 20px 20px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(254,249,231,0.12);
+  border-radius:var(--r-xl);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.testimonial--myx .testimonial__text{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:18px;
+  line-height:1.5;
+  color:var(--off-yellow);
+  margin:0;
+}
+@media (min-width:1024px){ .testimonial--myx .testimonial__text{ font-size:22px; } }
+.testimonial--myx .testimonial__name{
+  font-family:var(--serif);
+  font-size:18px;
+  color:var(--off-yellow);
+  line-height:1.15;
+}
+.testimonial--myx .testimonial__meta{
+  margin:2px 0 0;
+}
+.testimonial__tag--myx{
+  align-self:flex-start;
+  margin-top:6px;
+  background:transparent;
+  border:none;
+  border-top:1px solid var(--amber);
+  border-radius:0;
+  padding:8px 0 0;
+  color:var(--amber);
+  font-family:var(--sans);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+}
+
+/* ---------- COMPARE (Myaxyl: header + position) ---------- */
+.compare__header{ margin-bottom:28px; text-align:center; }
+.compare__header .eyebrow{ margin-bottom:10px; display:block; }
+.compare__title{ margin:0; }
+
+/* ---------- APP GUIDE (Myaxyl: add header + hero) ---------- */
+.app-guide__hero{ margin-bottom:24px; }
+.app-guide__hero span{ font-family:var(--serif); font-style:italic; color:var(--ink-60); }
+.app-guide__header{ margin-bottom:24px; }
+.app-guide__header .eyebrow{ margin-bottom:10px; display:block; }
+.app-guide__h2{
+  font-family:var(--serif);
+  font-size:24px;
+  font-weight:400;
+  color:var(--green);
+  letter-spacing:-0.2px;
+  margin:0;
+}
+@media (min-width:1024px){ .app-guide__h2{ font-size:30px; } }
+
+/* ---------- GO DEEPER / ACCORDION eyebrow fix ---------- */
+.go-deeper .eyebrow{ margin-bottom:10px; display:block; }
+
+/* ---------- REVIEWS: add city line below review ---------- */
+.review__city{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:var(--ink-40);
+  margin-top:6px;
+}
+.reviews__header .eyebrow{ margin-bottom:6px; display:block; }
+
+/* ---------- CLOSING ---------- */
+.closing__title{
+  font-family:var(--serif);
+  font-size:30px;
+  font-weight:400;
+  color:var(--off-yellow);
+  line-height:1.2;
+  letter-spacing:-0.3px;
+  max-width:720px;
+  margin:0 auto 12px;
+}
+@media (min-width:1024px){ .closing__title{ font-size:44px; } }
+.closing__sub{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:18px;
+  color:rgba(254,249,231,0.7);
+  margin:0;
+}
+@media (min-width:1024px){ .closing__sub{ font-size:22px; } }
+
+/* ---------- GENERAL: gallery stage min-height for flag visibility ---------- */
+@media (min-width:1024px){
+  .gallery__stage{ min-height:560px; }
+}
+
+/* ---------- GALLERY-COL: flex column so stats bar sits flush at bottom ---------- */
+/* pdp.css sets sticky + height but omits flex — without this the stats bar
+   overflows outside the sticky window on desktop */
+@media (min-width:1024px){
+  .gallery-col{ display:flex; flex-direction:column; }
+  .gallery{ flex:1; min-height:0; }
+}
+
+/* ---------- Kit ingredient image override (prevent 404 bg-images) ---------- */
+.ing-card--myx .ing-card__img{ background-image:none !important; }
+
+/* ---------- TIMELINE mobile: horizontal layout (image left, content right) ---------- */
+/* Matches Neeli's mobile pattern — eliminates the wasted vertical space */
+@media (max-width:767px){
+  .timeline__step{
+    flex-direction:row;
+    align-items:flex-start;
+    gap:16px;
+    text-align:left;
+  }
+  .timeline__body{ text-align:left; }
+  .timeline__stage-row{ justify-content:flex-start; }
+}
+
+/* ---------- INGREDIENTS mobile: alternating left/right image ---------- */
+/* Odd cards keep the default 113px|1fr (image left).
+   Even cards flip to 1fr|113px (body left, image right) — pdp.css already
+   sets order:2 on even .ing-card__img so it flows to the right column. */
+@media (max-width:767px){
+  .ingredients__grid .ing-card--myx:nth-child(even){ grid-template-columns:1fr 113px !important; }
+}
+
+/* ---------- SESAME BASE mobile: horizontal row layout (matches Neeli milks) ---------- */
+@media (max-width:767px){
+  .sesame-card{ flex-direction:row; align-items:center; padding:16px; gap:16px; text-align:left; }
+  .sesame-card__name{ font-size:16px; text-align:left; margin:0 0 4px; }
+  .sesame-card--hero .sesame-card__name{ font-size:18px; }
+  .sesame-card__desc{ text-align:left; }
+}
+
+/* ---------- APP GUIDE: cut top padding 80% before lifestyle image ---------- */
+@media (max-width:767px){ .app-guide{ padding-top:10px; } }
+
+/* ---------- STICKY BAR: safe-area-inset-bottom + tighter mobile padding ---------- */
+/* Neeli uses 10/14px and accounts for iPhone home bar — pdp.css omits both */
+@media (max-width:1023px){
+  .sticky-bar__inner{
+    padding:10px 14px calc(10px + env(safe-area-inset-bottom, 0px)) 14px;
+  }
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+body{margin:0;padding:24px;background:#fff;font-family:var(--sans);}
+.grid{display:grid;grid-template-columns:1fr 1px 1fr;gap:20px;max-width:560px;}
+.col h4{font-family:var(--sans);font-size:11px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;margin:0 0 14px;}
+.in h4{color:#1E4B3C;}
+.out h4{color:#991B1B;}
+.divider{background:rgba(192,200,195,0.4);}
+.item{display:flex;align-items:center;gap:12px;padding:8px 0;}
+.icon{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.icon img{width:16px;height:16px;}
+.in .icon{background:#F0FDF4;border:1px solid #DCFCE7;}
+.out .icon{background:#FEF6F6;border:1px solid #FEE2E2;}
+.out .item{opacity:.7;}
+.title{font-family:var(--sans);font-size:16px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;color:#191D18;}
+</style></head>
+<body>
+<div class="grid">
+  <div class="col in">
+    <h4>What's in</h4>
+    <div class="item"><div class="icon"><img src="../assets/i-check.svg"></div><div class="title">100% Natural Herbs</div></div>
+    <div class="item"><div class="icon"><img src="../assets/i-check.svg"></div><div class="title">Triple-Milk Base</div></div>
+  </div>
+  <div class="divider"></div>
+  <div class="col out">
+    <h4>What's out</h4>
+    <div class="item"><div class="icon"><img src="../assets/i-x.svg"></div><div class="title">No Mineral Oil</div></div>
+    <div class="item"><div class="icon"><img src="../assets/i-x.svg"></div><div class="title">No Parabens</div></div>
+  </div>
+</div>
+</body></html>

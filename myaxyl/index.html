@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Myaxyl Oil — Kerala Ayurveda</title>
+<link rel="stylesheet" href="../design-system/colors_and_type.css">
+<link rel="stylesheet" href="../design-system/ui_kits/pdp/pdp.css">
+<link rel="stylesheet" href="myaxyl.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState } = React;
+
+const DS = "../design-system/assets";
+
+/* ============ HEADER ============ */
+function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const close = () => setMenuOpen(false);
+  return (
+    <>
+      <header className="header">
+        <div className="header__inner">
+          <button className="header__menu" aria-label="Open menu" onClick={()=>setMenuOpen(true)}>
+            <span></span><span></span>
+          </button>
+          <nav className="header__nav">
+            <a href="#">Shop by Concern</a>
+            <a href="#">Shop by Doshas</a>
+            <a href="#">Self Care Bundles</a>
+            <a href="#">Clinics</a>
+            <a href="#">Academy</a>
+          </nav>
+          <a className="header__logo" href="#"><img src={`${DS}/logo.webp`} alt="Kerala Ayurveda"/></a>
+          <a className="header__cart" href="#" aria-label="Cart"><img src={`${DS}/i-bag.svg`} alt=""/></a>
+        </div>
+      </header>
+      <div className={"mobile-menu" + (menuOpen?" is-open":"")} aria-hidden={String(!menuOpen)}>
+        <div className="mobile-menu__backdrop" onClick={close}></div>
+        <aside className="mobile-menu__panel">
+          <button className="mobile-menu__close" aria-label="Close menu" onClick={close}><img src={`${DS}/i-x.svg`} alt=""/></button>
+          <a className="mobile-menu__logo" href="#"><img src={`${DS}/logo.webp`} alt="Kerala Ayurveda"/></a>
+          <nav className="mobile-menu__nav">
+            <a href="#">Shop by Concern</a>
+            <a href="#">Shop by Doshas</a>
+            <a href="#">Self Care Bundles</a>
+            <a href="#">Clinics</a>
+            <a href="#">Academy</a>
+          </nav>
+        </aside>
+      </div>
+    </>
+  );
+}
+
+/* ============ GALLERY ============ */
+function Gallery() {
+  const slides = [
+    {src:`${DS}/hero-1.webp`, alt:"Myaxyl Pain Relief Oil 200ml bottle — front-facing hero"},
+    {src:`${DS}/hero-2.webp`, alt:"Myaxyl Pain Relief Oil 60ml travel size"},
+    {src:`${DS}/hero-3.webp`, alt:"Myaxyl Oil being applied to affected area"},
+    {src:`${DS}/hero-4.webp`, alt:"Active-use lifestyle context"},
+    {src:`${DS}/hero-5.webp`, alt:"Detail shot — texture and pour"},
+    {src:`${DS}/hero-6.webp`, alt:"Back label and supplementary context"},
+  ];
+  const [i, setI] = useState(0);
+  const [startX, setStartX] = useState(null);
+  const go = (n) => setI((n + slides.length) % slides.length);
+  const onStart = (e) => setStartX(e.touches[0].clientX);
+  const onEnd = (e) => {
+    if (startX == null) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) go(i + (dx < 0 ? 1 : -1));
+    setStartX(null);
+  };
+  return (
+    <div className="gallery">
+      <div className="gallery__stage" onTouchStart={onStart} onTouchEnd={onEnd}>
+        <span className="gallery__flag">Best Seller · Pain Relief</span>
+        {slides.map(({src, alt}, idx) => (
+          <img key={src} src={src} className={"gallery__img" + (i===idx?" is-active":"")} alt={alt}/>
+        ))}
+        <button className="gallery__arrow gallery__arrow--prev" onClick={()=>go(i-1)} aria-label="Previous"><img src={`${DS}/chevron.svg`} alt=""/></button>
+        <button className="gallery__arrow gallery__arrow--next" onClick={()=>go(i+1)} aria-label="Next"><img src={`${DS}/chevron.svg`} alt=""/></button>
+        <div className="gallery__thumbs">
+          {slides.map(({src}, idx) => (
+            <button key={src} className={"gallery__thumb" + (i===idx?" is-active":"")} onClick={()=>go(idx)}>
+              <img src={src} alt=""/>
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ============ STATS BAR ============ */
+function StatsBar() {
+  const Star = () => (
+    <svg viewBox="0 0 12 12" width="12" height="12" fill="currentColor" aria-hidden="true">
+      <path d="M6 0l1.8 3.6L12 4.2 9 7l.7 4L6 9l-3.7 2L3 7 0 4.2l4.2-.6z"/>
+    </svg>
+  );
+  return (
+    <div className="stats">
+      <div className="stats__cell">
+        <div className="stats__num">4.7 <Star/></div>
+        <div className="stats__label">Rating</div>
+      </div>
+      <div className="stats__cell">
+        <div className="stats__num">215</div>
+        <div className="stats__label">Reviews</div>
+      </div>
+      <div className="stats__cell">
+        <div className="stats__num">94%</div>
+        <div className="stats__label">Recommend</div>
+      </div>
+      <div className="stats__cell">
+        <div className="stats__num">~₹15</div>
+        <div className="stats__label">Per session</div>
+      </div>
+    </div>
+  );
+}
+
+/* ============ PRODUCT INFO ============ */
+function ProductInfo({ size, setSize }) {
+  return (
+    <div className="info">
+      <span className="info__badge">Joint Pain · Muscle Recovery · Sports Injury</span>
+      <h1 className="info__title">Myaxyl Oil</h1>
+      <p className="info__subtitle">Relief within minutes, recovery that lasts the days that follow.</p>
+      <p className="info__meta">Made by BAMS doctors &nbsp;·&nbsp; GMP &amp; ISO-certified facility &nbsp;·&nbsp; FDA compliant &amp; AYUSH licensed</p>
+
+      <div className="info__rating">
+        <div className="info__rating-stars">
+          {Array.from({length:5}).map((_,i)=><img key={i} src={`${DS}/star.svg`} alt=""/>)}
+        </div>
+        <span className="info__rating-text">4.7 · 215 reviews</span>
+      </div>
+
+      <blockquote className="microquote">
+        "Back to the gym in two days — and not because the pain came back."
+        <cite>— Aditi M., Mumbai</cite>
+      </blockquote>
+
+      <div className="ritual">
+        <div className="ritual__icon"><img src={`${DS}/ritual.svg`} alt=""/></div>
+        <div>
+          <div className="ritual__label">The Ritual</div>
+          <div className="ritual__text">A few drops. Circular massage, direction of hair growth. Absorbs in about a minute.</div>
+        </div>
+      </div>
+
+      <div className="badges">
+        <span className="badge"><img src={`${DS}/i-truck.svg`} alt=""/>2–4 day delivery</span>
+        <span className="badge"><img src={`${DS}/i-cash.svg`} alt=""/>COD available</span>
+        <span className="badge"><img src={`${DS}/i-return.svg`} alt=""/>Easy returns</span>
+      </div>
+
+      <div className="size-select" role="radiogroup" aria-label="Size">
+        <button type="button" role="radio" aria-checked={size==="200"} className={"size-select__opt"+(size==="200"?" is-selected":"")} onClick={()=>setSize("200")}>
+          <span className="size-select__name">200 ml</span>
+          <span className="size-select__price">₹437 <span className="size-select__old">₹460</span></span>
+          <span className="size-select__note">5% off</span>
+        </button>
+        <button type="button" role="radio" aria-checked={size==="60"} className={"size-select__opt"+(size==="60"?" is-selected":"")} onClick={()=>setSize("60")}>
+          <span className="size-select__name">60 ml</span>
+          <span className="size-select__price">₹150</span>
+          <span className="size-select__note">Trial size</span>
+        </button>
+      </div>
+    </div>
+  );
+}
+
+/* ============ TRUST MARKERS ============ */
+function TrustMarkers() {
+  const items = [
+    ["1945","Est."],["GMP","Certified"],["ISO","Certified"],
+    ["FDA","Compliant"],["AYUSH","Licensed"]
+  ];
+  return (
+    <div className="trust-markers">
+      {items.map(([v,l])=>(
+        <div className="trust-markers__cell" key={l+v}>
+          <div className="trust-markers__num">{v}</div>
+          <div className="trust-markers__label">{l}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/* ============ REGIMEN STRIP ============ */
+function RegimenStrip() {
+  const [a, setA] = useState(false);
+  const [b, setB] = useState(false);
+  return (
+    <section className="regimen">
+      <div className="regimen__label">Complete the Regimen</div>
+      <div className="regimen__grid">
+        <div className="regimen-card">
+          <div className="regimen-card__img">
+            <img src="https://keralaayurveda.com/cdn/shop/files/MyaxylCream.png" alt="Myaxyl Cream 20g"/>
+          </div>
+          <div className="regimen-card__body">
+            <div className="regimen-card__title">Myaxyl Cream 20g</div>
+            <div className="regimen-card__desc">For when you can't sit with oil — quick touch-ups, travel, office.</div>
+          </div>
+          <button className={"regimen-card__add"+(a?" is-added":"")} onClick={()=>setA(!a)}>
+            {a ? "✓ Added" : "+ ₹80"}
+          </button>
+        </div>
+        <div className="regimen-card">
+          <div className="regimen-card__img">
+            <img src="https://keralaayurveda.com/cdn/shop/files/YogarajaGugguluTablets.png" alt="Yogaraja Guggulu Tablets"/>
+          </div>
+          <div className="regimen-card__body">
+            <div className="regimen-card__title">Yogaraja Guggulu Tablets</div>
+            <div className="regimen-card__desc">Internal joint support — for sustained care beyond the application.</div>
+          </div>
+          <button className={"regimen-card__add"+(b?" is-added":"")} onClick={()=>setB(!b)}>
+            {b ? "✓ Added" : "+ ₹170"}
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ============ MECHANISM ============ */
+function Mechanism() {
+  return (
+    <section className="mechanism">
+      <div className="mechanism__eyebrow">How it works</div>
+      <h2 className="mechanism__title">Two actions. One oil.</h2>
+      <div className="mechanism__body">
+        <p>Relief you feel within minutes — cooling and gentle warmth as the formula absorbs. Recovery you feel in the days that follow — Sesame oil carries the herbal actives into deep tissue where the healing happens. Devadaru and Nandivriksha calm the inflammatory pathway without blocking it. Rasna supports tissue repair. Your body's inflammatory response is how it heals — Myaxyl supports that process, it doesn't suppress it.</p>
+      </div>
+    </section>
+  );
+}
+
+/* ============ FIRST-USE SENSORY CALLOUT ============ */
+function Sensory() {
+  return (
+    <section className="sensory">
+      <div className="eyebrow">First use</div>
+      <h2 className="sensory__title">What you'll feel first.</h2>
+      <p className="sensory__body">A cooling sensation on contact — the eucalyptus settling in. Within seconds, a light warmth as the sesame oil absorbs. No menthol burn. No capsaicin sting. The cool-and-warm combination is the formula signalling it's working.</p>
+      <blockquote className="microquote sensory__quote">
+        "The first time I used it, I was waiting for the burn. It never came — just a calm cooling that turned into warmth."
+        <cite>— Rohan B., Bengaluru</cite>
+      </blockquote>
+    </section>
+  );
+}
+
+/* ============ HONEST SEQUENCE ============ */
+function HonestSequence() {
+  return (
+    <section className="honest">
+      <h2 className="honest__title">Relief is fast. Recovery takes a little longer.</h2>
+      <p className="honest__sub">Both matter — and you get both.</p>
+    </section>
+  );
+}
+
+/* ============ TIMELINE BANNER ============ */
+function TimelineHeader() {
+  return (
+    <div className="timeline-banner">
+      <div className="eyebrow eyebrow--cinnamon">What to expect</div>
+      <h2 className="timeline-banner__h2">The honest sequence.</h2>
+    </div>
+  );
+}
+
+/* ============ TIMELINE ============ */
+function Timeline() {
+  const steps = [
+    {stage:"Within minutes", title:"Cooling and warmth sets in.", text:"The pain signal softens. Stiffness begins to ease.", placeholder:"Application"},
+    {stage:"Within the day", title:"Swelling reduces.", text:"Mobility returns. A full range of motion feels closer.", placeholder:"Recovery"},
+    {stage:"Week 2 onward", title:"Tissue recovers.", text:"Fewer recurrences. Better flexibility over time.", placeholder:"Long term"},
+  ];
+  return (
+    <section className="timeline">
+      <div className="timeline__inner">
+        {steps.map(({stage, title, text, placeholder})=>(
+          <div className="timeline__step" key={stage}>
+            <div className="timeline__thumb placeholder-tile placeholder-tile--timeline"><span>{placeholder}</span></div>
+            <div className="timeline__body">
+              <div className="timeline__stage-row">
+                <span className="timeline__stage">{stage}</span>
+              </div>
+              <h3 className="timeline__title">{title}</h3>
+              <p className="timeline__text">{text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <p className="timeline__disclaimer">Based on consistent use as directed. Individual results may vary.</p>
+    </section>
+  );
+}
+
+/* ============ INGREDIENTS ============ */
+function Ingredients() {
+  const data = [
+    {name:"Devadaru", latin:"Cedrus deodara", role:"Pain Relief", roleClass:"role--pain-relief", desc:"Himalayan cedar with alpha and beta himachalene — the pain-relief action. Sourced from Nepal.", placeholder:"Devadaru"},
+    {name:"Nandivriksha", latin:"Tabernaemontana divaricata", role:"Anti-Inflammatory", roleClass:"role--anti-inflammatory", desc:"Alkaloids and terpenoids calm inflammatory cytokines. Native to Kerala — used as fresh juice.", placeholder:"Nandivriksha"},
+    {name:"Rasna", latin:"Alpinia galanga", role:"Recovery", roleClass:"role--recovery", desc:"Traditionally used to support tissue repair in musculoskeletal care. Sourced from West Bengal.", placeholder:"Rasna"},
+    {name:"Sesame Oil", latin:"Sesamum indicum", role:"Absorption", roleClass:"role--absorption", desc:"The classical base — 45-63% derivable oil content. Carries the actives into deep tissue.", placeholder:"Sesame"},
+  ];
+  return (
+    <section className="ingredients">
+      <div className="ingredients__header">
+        <div className="eyebrow">What's inside</div>
+        <h2 className="ingredients__h2">Four actives. One formula.</h2>
+      </div>
+      <div className="ingredients__grid">
+        {data.map(({name, latin, role, roleClass, desc, placeholder})=>(
+          <article className="ing-card ing-card--myx" key={name}>
+            <div className="ing-card__img placeholder-tile"><span>{placeholder}</span></div>
+            <div className="ing-card__body">
+              <span className={"ing-card__role "+roleClass}>{role}</span>
+              <h3 className="ing-card__name">{name}</h3>
+              <div className="ing-card__latin">{latin}</div>
+              <p className="ing-card__desc">{desc}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ============ SESAME OIL BASE ============ */
+function SesameBase() {
+  return (
+    <section className="sesame">
+      <div className="sesame__header">
+        <div className="eyebrow">The base</div>
+        <h2 className="sesame__h2">The Queen of oils.</h2>
+        <p className="sesame__intro">The classical differentiator is not just what's in the oil — it's what carries it. Sesame oil holds the highest percentage of carrier-grade oil among traditional bases, and it's the one Ayurveda reaches for first in musculoskeletal care.</p>
+      </div>
+      <div className="sesame__grid">
+        <article className="sesame-card sesame-card--hero">
+          <div className="sesame-card__icon placeholder-tile placeholder-tile--circle"><span>Sesame</span></div>
+          <h3 className="sesame-card__name">Sesame Oil</h3>
+          <p className="sesame-card__desc">45-55% derivable oil. Oleic and linoleic acids that the body cannot synthesize on its own. Deep-tissue absorption — the classical carrier for external pain formulations.</p>
+        </article>
+        <article className="sesame-card">
+          <div className="sesame-card__icon placeholder-tile placeholder-tile--circle"><span>Eucalyptus</span></div>
+          <h3 className="sesame-card__name">Eucalyptus</h3>
+          <p className="sesame-card__desc">Cooling on contact. Desensitises surface pain receptors.</p>
+        </article>
+        <article className="sesame-card">
+          <div className="sesame-card__icon placeholder-tile placeholder-tile--circle"><span>Lemongrass</span></div>
+          <h3 className="sesame-card__name">Lemongrass</h3>
+          <p className="sesame-card__desc">Gentle warmth. Aids detox by improving circulation to the tissues.</p>
+        </article>
+      </div>
+    </section>
+  );
+}
+
+/* ============ WHAT'S IN / OUT ============ */
+function WhatsIn() {
+  return (
+    <section className="whats-in">
+      <div className="whats-in__header">
+        <div className="eyebrow">What's in it</div>
+        <h2 className="whats-in__title">Clean, by the back label.</h2>
+      </div>
+      <div className="whats-in__card">
+        <div>
+          <div className="whats-in__col-label">What's in</div>
+          <div className="whats-in__item">
+            <span className="whats-in__icon whats-in__icon--yes"><img src={`${DS}/i-check.svg`} alt=""/></span>
+            <div><div className="whats-in__item-title">100% natural herbal actives</div></div>
+          </div>
+          <div className="whats-in__item">
+            <span className="whats-in__icon whats-in__icon--yes"><img src={`${DS}/i-check2.svg`} alt=""/></span>
+            <div><div className="whats-in__item-title">Cold-pressed sesame oil base</div></div>
+          </div>
+          <div className="whats-in__item">
+            <span className="whats-in__icon whats-in__icon--yes"><img src={`${DS}/i-check.svg`} alt=""/></span>
+            <div><div className="whats-in__item-title">Herbal oils (eucalyptus, lemongrass, peppermint)</div></div>
+          </div>
+        </div>
+        <div className="whats-in__divider" aria-hidden="true"></div>
+        <div>
+          <div className="whats-in__col-label whats-in__col-label--no">What's out</div>
+          <div className="whats-in__item whats-in__item--no">
+            <span className="whats-in__icon whats-in__icon--no"><img src={`${DS}/i-x.svg`} alt=""/></span>
+            <div><div className="whats-in__item-title">No menthol (no counterirritant sting)</div></div>
+          </div>
+          <div className="whats-in__item whats-in__item--no">
+            <span className="whats-in__icon whats-in__icon--no"><img src={`${DS}/i-x.svg`} alt=""/></span>
+            <div><div className="whats-in__item-title">No capsaicin (no burning sensation)</div></div>
+          </div>
+          <div className="whats-in__item whats-in__item--no">
+            <span className="whats-in__icon whats-in__icon--no"><img src={`${DS}/i-x.svg`} alt=""/></span>
+            <div><div className="whats-in__item-title">No synthetic fragrance or mineral oil</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ============ TESTIMONIALS ============ */
+function Testimonials() {
+  const ts = [
+    {quote:"Back to the gym in two days — and not because the pain came back. My quad was actually healing, not just numbed.", name:"Aditi M.", meta:"Mumbai · Day 2", tag:"↑ Fast Recovery"},
+    {quote:"I've used a pain spray for years. Switched to this after a bad sprain. The mornings are what changed — less stiffness, easier to get moving.", name:"Anil R.", meta:"Pune · Week 3", tag:"↑ Less Stiffness"},
+  ];
+  return (
+    <section className="testimonials">
+      <div className="testimonials__grid">
+        {ts.map(({quote, name, meta, tag})=>(
+          <div className="testimonial testimonial--myx" key={name}>
+            <div className="testimonial__stars">
+              {Array.from({length:5}).map((_,i)=><img key={i} src={`${DS}/star.svg`} alt=""/>)}
+            </div>
+            <p className="testimonial__text">"{quote}"</p>
+            <div className="testimonial__name">{name}</div>
+            <div className="testimonial__meta">{meta}</div>
+            <span className="testimonial__tag testimonial__tag--myx">{tag}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ============ COMPARE ============ */
+function Compare() {
+  const rows = [
+    {label:"Mechanism", us:"Supports inflammatory response", them:"Blocks pain signal"},
+    {label:"Absorption", us:"Deep tissue via sesame oil base", them:"Superficial sensory block"},
+    {label:"Recovery", us:"Tissue repair and regeneration", them:"No curative action"},
+    {label:"Dependency", us:"None reported", them:"Tolerance risk with repeated use"},
+  ];
+  return (
+    <section className="compare">
+      <div className="compare__header">
+        <div className="eyebrow">Compare</div>
+        <h2 className="compare__title">Why not a generic pain spray?</h2>
+      </div>
+      <div className="compare__grid">
+        <div className="compare__col compare__col--us">
+          <div className="compare__col-name">Myaxyl Oil</div>
+          {rows.map(({label, us})=>(
+            <div className="compare__row" key={label}>
+              <div className="compare__row-label">{label}</div>
+              <div className="compare__row-val">{us}</div>
+            </div>
+          ))}
+        </div>
+        <div className="compare__col compare__col--them">
+          <div className="compare__col-name">Generic Pain Spray</div>
+          {rows.map(({label, them})=>(
+            <div className="compare__row" key={label}>
+              <div className="compare__row-label">{label}</div>
+              <div className="compare__row-val">{them}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ============ APP GUIDE ============ */
+function AppGuide() {
+  const steps = [
+    {num:"01", label:"Warm", desc:"Self-warming formula. No heating needed — just a few drops in the palm."},
+    {num:"02", label:"Massage", desc:"Circular motions in the direction of hair growth. Let each layer absorb before adding more."},
+    {num:"03", label:"Leave", desc:"Absorbs in about a minute. Leave on, or rinse with warm water and mild soap if preferred. Apply 1-2 times daily."},
+  ];
+  return (
+    <section className="app-guide">
+      <div className="app-guide__hero placeholder-tile placeholder-tile--wide"><span>Application lifestyle</span></div>
+      <div className="app-guide__header">
+        <div className="eyebrow">How to use</div>
+        <h2 className="app-guide__h2">Warm · Massage · Leave.</h2>
+      </div>
+      <div className="app-guide__patch">
+        <img src={`${DS}/i-info.svg`} alt=""/>Always patch test first
+      </div>
+      <div className="app-guide__steps">
+        {steps.map(({num, label, desc})=>(
+          <div className="app-guide__step" key={num}>
+            <div className="app-guide__num">{num}</div>
+            <div className="app-guide__label">{label}</div>
+            <p className="app-guide__desc">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ============ ACCORDION ============ */
+function Accordion() {
+  const items = [
+    {label:"Preparation method — Thaila Paaka", content:<p>Fresh juice of Nandivriksha is combined with a fine paste of Devadaru and Rasna in a sesame oil base. The mixture is heated on low flame in the classical Thaila Paaka method, until the water content has evaporated and the herbal actives have bound to the oil. Essential oils — eucalyptus and lemongrass — are infused at the final stage overnight. The oil is filtered warm.</p>},
+    {label:"Safety & side effects", content:<p>For external use only. Patch test before first application. Avoid open wounds — apply around the area instead. Avoid contact with eyes, nose, and mouth. Rare: mild tingling or warmth in sensitive users — usually subsides within minutes. Safe during pregnancy for external use. Adult supervision recommended for younger children.</p>},
+    {label:"Full ingredient list", content:<p>Devadaru (<em>Cedrus deodara</em>), Nandivriksha (<em>Tabernaemontana divaricata</em>), Rasna (<em>Alpinia galanga</em>), Sesame oil (<em>Sesamum indicum</em>) base, Eucalyptus oil, Lemongrass oil, Peppermint essential oil. No synthetic fragrance. No mineral oil. No parabens.</p>},
+    {label:"When not to use", content:<p>Not to be applied directly on open wounds or broken skin. Not to be taken internally. If rigorous exercise is immediately planned, allow 10-15 minutes after application. Avoid cold showers or cold beverages immediately post-application — they work against the oil's warming action.</p>},
+  ];
+  const [open, setOpen] = useState([0]);
+  const toggle = (idx) => setOpen(open.includes(idx) ? open.filter(i=>i!==idx) : [...open, idx]);
+  return (
+    <section className="go-deeper">
+      <div className="eyebrow eyebrow--cinnamon">Information</div>
+      <h2 className="go-deeper__title">Go deeper.</h2>
+      <div className="accordion">
+        {items.map(({label, content}, idx)=>(
+          <div className={"accordion__item" + (open.includes(idx)?" is-open":"")} key={label}>
+            <button className="accordion__btn" onClick={()=>toggle(idx)}>
+              <span className="accordion__label">{label}</span>
+              <img className="accordion__chev" src={`${DS}/chevron.svg`} alt=""/>
+            </button>
+            <div className="accordion__panel">
+              <div className="accordion__content">{content}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ============ REVIEWS ============ */
+function Reviews() {
+  const rs = [
+    {quote:"My father has knee stiffness every morning. We switched from a generic spray to this on his doctor's advice. A few weeks in, he's moving around the house without the first-hour limp. Slower than the spray, but the mornings are genuinely better now.", name:"Meera K.", city:"Kochi"},
+    {quote:"Got a bad ankle sprain playing tennis. Iced it, then started using this twice a day. The cooling is real — not a numbing block, more like the swelling actually going down. Walked fine on day three.", name:"Karthik V.", city:"Hyderabad"},
+  ];
+  return (
+    <section className="reviews">
+      <div className="reviews__header">
+        <div>
+          <div className="eyebrow eyebrow--cinnamon">Customer reviews</div>
+          <h2 className="reviews__title">4.7 · 215 verified reviews</h2>
+        </div>
+        <div className="reviews__score">
+          <div className="reviews__stars">
+            {Array.from({length:4}).map((_,i)=><img key={i} src={`${DS}/star.svg`} alt=""/>)}
+            <img src={`${DS}/star-half.svg`} alt=""/>
+          </div>
+          <div className="reviews__score-num">4.7 / 5.0</div>
+        </div>
+      </div>
+      <div className="reviews__grid">
+        {rs.map(({quote, name, city})=>(
+          <article className="review" key={name}>
+            <header className="review__head">
+              <span className="review__name">{name.toUpperCase()}</span>
+              <span className="review__verified">Verified Purchase</span>
+            </header>
+            <div className="review__stars">
+              {Array.from({length:5}).map((_,i)=><img key={i} src={`${DS}/star.svg`} alt=""/>)}
+            </div>
+            <p className="review__text">"{quote}"</p>
+            <div className="review__city">{city}</div>
+          </article>
+        ))}
+      </div>
+      <a href="#" className="reviews__cta">Read all 215 reviews</a>
+    </section>
+  );
+}
+
+/* ============ CLOSING ============ */
+function Closing() {
+  return (
+    <section className="closing">
+      <h2 className="closing__title">The Proprietary Kerala Ayurveda formulation.</h2>
+      <p className="closing__sub">This is one of them.</p>
+    </section>
+  );
+}
+
+/* ============ STICKY BAR ============ */
+function StickyBar({ size, onAdd, added }) {
+  const priceData = {
+    "200": { new: "₹437", old: "₹460", sub: "200 ml · ₹437" },
+    "60":  { new: "₹150", old: null,   sub: "60 ml · ₹150" }
+  };
+  const p = priceData[size];
+  return (
+    <div className="sticky-bar">
+      <div className="sticky-bar__inner">
+        <div className="sticky-bar__thumb"><img src={`${DS}/hero-1.webp`} alt=""/></div>
+        <div className="sticky-bar__info">
+          <div className="sticky-bar__title">Myaxyl Oil</div>
+          <div className="sticky-bar__sub">{p.sub}</div>
+        </div>
+        <button className={"atc sticky-bar__atc"+(added?" is-added":"")} onClick={onAdd}>
+          <span className="atc__icon"><img src={`${DS}/i-bag.svg`} alt=""/></span>
+          <span className="atc__main">
+            <span className="atc__main-top">{added ? "✓ Added to Cart" : "Add to Cart"}</span>
+          </span>
+          <span className="atc__price">
+            {p.old && <span className="atc__price-old">{p.old}</span>}
+            <span className="atc__price-new">{p.new}</span>
+          </span>
+        </button>
+      </div>
+    </div>
+  );
+}
+
+/* ============ APP ============ */
+function App() {
+  const [size, setSize] = useState("200");
+  const [added, setAdded] = useState(false);
+  const onAdd = () => { setAdded(true); setTimeout(()=>setAdded(false), 1800); };
+  return (
+    <>
+      <Header />
+      <main className="product-main">
+        <div className="product-main__inner">
+          <div className="gallery-col">
+            <Gallery />
+          </div>
+          <div className="product-col">
+            <ProductInfo size={size} setSize={setSize}/>
+            <TrustMarkers />
+            <RegimenStrip />
+            <Mechanism />
+          </div>
+        </div>
+      </main>
+      <Sensory />
+      <HonestSequence />
+      <TimelineHeader />
+      <Timeline />
+      <Ingredients />
+      <SesameBase />
+      <WhatsIn />
+      <Testimonials />
+      <Compare />
+      <AppGuide />
+      <Accordion />
+      <Reviews />
+      <Closing />
+      <StickyBar size={size} onAdd={onAdd} added={added}/>
+      <div style={{height:"90px"}}></div>
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script>
+</body>
+</html>

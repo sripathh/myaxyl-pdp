@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+body{margin:0;padding:28px;background:#fff;font-family:var(--sans);}
+.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;align-items:end;}
+.cell{display:flex;flex-direction:column;align-items:center;gap:8px;}
+.box{width:64px;height:56px;background:#1E4B3C;}
+.tok{font-size:10px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:rgba(25,29,24,0.6);}
+.val{font-size:10px;color:rgba(25,29,24,0.5);}
+</style></head>
+<body>
+<div class="grid">
+  <div class="cell"><div class="box" style="border-radius:3px;"></div><div class="tok">xs</div><div class="val">3</div></div>
+  <div class="cell"><div class="box" style="border-radius:6px;"></div><div class="tok">sm</div><div class="val">6</div></div>
+  <div class="cell"><div class="box" style="border-radius:8px;"></div><div class="tok">md</div><div class="val">8</div></div>
+  <div class="cell"><div class="box" style="border-radius:10px;"></div><div class="tok">lg</div><div class="val">10</div></div>
+  <div class="cell"><div class="box" style="border-radius:12px;"></div><div class="tok">xl</div><div class="val">12</div></div>
+  <div class="cell"><div class="box" style="border-radius:999px;"></div><div class="tok">pill</div><div class="val">999</div></div>
+</div>
+</body></html>

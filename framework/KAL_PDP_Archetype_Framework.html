@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KAL PDP Archetype Framework</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Source Sans 3',sans-serif;background:#FAFAF8;color:#1A1A1A;padding:32px 40px;font-size:13px}
+  h1{font-size:20px;font-weight:600;color:#1B4332;margin-bottom:4px}
+  .subtitle{font-size:11px;color:#888;margin-bottom:20px;letter-spacing:0.5px}
+
+  /* Arch headers */
+  .arch-grid{display:grid;grid-template-columns:220px repeat(4,1fr);gap:8px;margin-bottom:16px}
+  .arch-spacer{}
+  .arch-card{border-radius:8px;padding:12px 14px}
+  .arch-label{font-size:9.5px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px}
+  .arch-name{font-size:14px;font-weight:600;margin-bottom:3px}
+  .arch-sub{font-size:11px;opacity:0.75;line-height:1.35}
+
+  /* Table */
+  table{width:100%;border-collapse:collapse}
+  colgroup col:first-child{width:220px}
+  colgroup col{width:calc((100% - 220px)/4)}
+
+  thead th{background:#1B4332;color:#FFF;font-weight:500;font-size:10.5px;padding:9px 12px;text-align:left;border-right:1px solid rgba(255,255,255,0.12)}
+  thead th:last-child{border-right:none}
+
+  tbody td{padding:9px 12px;vertical-align:top;border-bottom:1px solid #EBE9E4;border-right:1px solid #EBE9E4;line-height:1.5;font-size:12px;color:#333}
+  tbody td:last-child{border-right:none}
+  tbody tr:last-child td{border-bottom:none}
+
+  .zone-row td{background:#F2F0EA;padding:7px 12px;border-right:1px solid #DDD}
+  .zone-row td:last-child{border-right:none}
+  .zone-label{font-size:9.5px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#666}
+  .block-name{font-weight:600;color:#1A1A1A;display:block;margin-bottom:3px}
+  .cond-badge{display:inline-block;font-size:9.5px;font-weight:600;border-radius:3px;padding:1px 6px;margin-top:2px}
+  .cond-c1{background:#EAF3DE;color:#3B6D11}
+  .cond-c2{background:#E6F1FB;color:#185FA5}
+  .cond-c3{background:#FAEEDA;color:#854F0B}
+  .cond-c4{background:#FCEBEB;color:#A32D2D}
+
+  .pill{display:inline-block;font-size:9.5px;font-weight:600;border-radius:3px;padding:1px 6px;margin-right:3px;margin-bottom:3px}
+  .p-std{background:#F0EDE6;color:#666}
+  .p-up{background:#EAF3DE;color:#3B6D11}
+  .p-compress{background:#FAEEDA;color:#854F0B}
+  .p-z1{background:#EEEDFE;color:#3C3489}
+  .p-diff{background:#FCEBEB;color:#A32D2D}
+  .p-depth{background:#E6F1FB;color:#185FA5}
+  .p-na{background:#F0EDE6;color:#AAA;font-style:italic}
+  .p-centre{background:#FBF6ED;color:#8B6914}
+
+  /* Legend */
+  .legend{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px;align-items:center;padding-top:14px;border-top:1px solid #E0DDD6}
+  .legend-label{font-size:10.5px;color:#888;margin-right:4px}
+</style>
+</head>
+<body>
+
+<h1>PDP Product Archetype Framework</h1>
+<div class="subtitle">Kerala Ayurveda Limited · DTC Conversion v3.1 · How 11 execution blocks are tuned across 4 archetypes · Updated basis Neelibhringadi Keram PDP review</div>
+
+<!-- Arch headers -->
+<div class="arch-grid">
+  <div class="arch-spacer"></div>
+  <div class="arch-card" style="background:#FBF6ED;border:1px solid #E5D9B8">
+    <div class="arch-label" style="color:#8B6914">Fast-relief</div>
+    <div class="arch-name" style="color:#5C4A10">Hours – days</div>
+    <div class="arch-sub" style="color:#8B6914">Speed is the promise. Zone 2 compresses.</div>
+  </div>
+  <div class="arch-card" style="background:#EAF3DE;border:1px solid #C0DD97">
+    <div class="arch-label" style="color:#3B6D11">Slow-burn</div>
+    <div class="arch-name" style="color:#173404">4 – 8 weeks</div>
+    <div class="arch-sub" style="color:#3B6D11">Experience gap is the risk. Full Zone 2 depth.</div>
+  </div>
+  <div class="arch-card" style="background:#E6F1FB;border:1px solid #85B7EB">
+    <div class="arch-label" style="color:#185FA5">Topical</div>
+    <div class="arch-name" style="color:#042C53">Usage-dependent</div>
+    <div class="arch-sub" style="color:#185FA5">Usage + reaction guidance move up.</div>
+  </div>
+  <div class="arch-card" style="background:#FCEBEB;border:1px solid #F09595">
+    <div class="arch-label" style="color:#A32D2D">Chronic-support</div>
+    <div class="arch-name" style="color:#501313">Ongoing condition</div>
+    <div class="arch-sub" style="color:#A32D2D">Safety moves to Zone 1. Three mindsets.</div>
+  </div>
+</div>
+
+<table>
+<colgroup><col><col><col><col><col></colgroup>
+<thead>
+  <tr>
+    <th>Block</th>
+    <th>Fast-relief</th>
+    <th>Slow-burn</th>
+    <th>Topical</th>
+    <th>Chronic-support</th>
+  </tr>
+</thead>
+<tbody>
+
+  <!-- ZONE 1 -->
+  <tr class="zone-row"><td colspan="5"><span class="zone-label">Zone 1 — Instant clarity (3 sec)</span></td></tr>
+
+  <tr>
+    <td><span class="block-name">#1 Concern match</span><span class="cond-badge cond-c1">C1 Relevance</span></td>
+    <td>Standard. Mirrors ad/search language for the acute concern.</td>
+    <td>Standard. Mirrors concern language + journey framing cue.</td>
+    <td>Standard. Concern label reflects skin/hair/body concern precisely.</td>
+    <td>Must cover all three mindsets simultaneously — avoid implying "replace medication."</td>
+  </tr>
+
+  <tr>
+    <td><span class="block-name">#2 Outcome promise</span><span class="cond-badge cond-c1">C1 Relevance</span></td>
+    <td><span class="pill p-diff">Speed-forward</span>Emphasises "feel it working" quickly. Promise is immediate-outcome-led.</td>
+    <td><span class="pill p-std">Journey framing</span>Names the destination ("calmer, better sleep") — timeline anchors it as achievable.</td>
+    <td>Promise is outcome of correct use: "visibly improved skin tone in 3–4 weeks of daily use."</td>
+    <td>Maintenance/management framing, not cure: "supports healthy blood sugar levels naturally."</td>
+  </tr>
+
+  <tr>
+    <td><span class="block-name">#3 Trust strip</span><span class="cond-badge cond-c2">C2 Belief</span></td>
+    <td>Standard. Since 1945 · GMP · Doctor-formulated · Own farms.</td>
+    <td>Standard. Same strip — trust equal-weight across archetypes in Zone 1.</td>
+    <td>Standard. "Dermatologically tested" added if available.</td>
+    <td><span class="pill p-up">Elevated</span>Doctor-formulated + own farms carry more weight. Consider adding "used in 20+ clinics."</td>
+  </tr>
+
+  <tr>
+    <td><span class="block-name">#9 Value framing (price anchor)</span><span class="cond-badge cond-c3">C3 Ease of starting</span></td>
+    <td>Unit framing fine: "₹180 for 30 sachets." No daily-cost calc needed at low price points.</td>
+    <td><span class="pill p-depth">Daily cost required</span>"₹450 for a 60-day supply | ~₹8/day." Duration makes price feel proportionate.</td>
+    <td>"₹290 · lasts ~3 months with daily use." Usage-based duration, not calendar days.</td>
+    <td>Duration + regimen framing: "₹350/month as part of your daily wellness routine." Programme, not product.</td>
+  </tr>
+
+  <tr>
+    <td><span class="block-name">#6 How to use (headline)</span><span class="cond-badge cond-c2">C2 Belief</span></td>
+    <td>"Mix one sachet in warm water. Drink before bed." Single-action instruction.</td>
+    <td>"One tablet before bed. That's it." Commitment feels minimal relative to the 8-week journey.</td>
+    <td><span class="pill p-up">Elevated in Z1</span>"Apply 3–4 drops and massage in. Takes 60 seconds." Technique visible upfront — application is the product.</td>
+    <td>Simplified: "Two tablets after meals, daily." Complex regimen detail deferred to Zone 3.</td>
+  </tr>
+
+  <!-- ZONE 2 -->
+  <tr class="zone-row"><td colspan="5"><span class="zone-label">Zone 2 — Build belief</span></td></tr>
+
+  <tr>
+    <td><span class="block-name">#4 How it works + ingredients</span><span class="cond-badge cond-c2">C2 Belief</span></td>
+    <td><span class="pill p-compress">Compressed ~1 screen</span>2–3 sentence mechanism. 2–3 hero ingredients. Speed of relief is the mechanism hook.</td>
+    <td><span class="pill p-depth">Full depth ~2 screens</span>3–5 sentence mechanism in modern wellness language. 3–4 hero ingredients with one-line function tied to concern.</td>
+    <td>Normal depth. Mechanism is skin-biology-led ("penetrates the dermal layer…"). Ingredients mapped to visible outcomes.</td>
+    <td>Mechanism framed as "complementary action" — supports, doesn't replace. Drug-interaction awareness embedded here.</td>
+  </tr>
+
+  <tr>
+    <td><span class="block-name">#4a First-use sensory callout</span><span class="cond-badge cond-c2">C2 Belief</span></td>
+    <td><span class="pill p-na">N/A</span>Fast-relief product communicates speed through #2 and #5 — no separate sensory insert needed.</td>
+    <td><span class="pill p-na">Optional</span>Only if product has a notable first-use sensation (e.g. warming, cooling). Otherwise omit.</td>
+    <td><span class="pill p-up">Topical-specific insert</span>Single callout between #4 and #5 describing the Day 1 / first-application sensation: texture, absorption, any cooling or warming effect. Resolves "will it be greasy / heavy / sting" objection before it forms. Back with one inline quote. e.g. "A cooling sensation on the scalp within minutes. Absorbs without heaviness."</td>
+    <td><span class="pill p-na">N/A</span>Ingestible — no application sensation to describe.</td>
+  </tr>
+
+  <tr>
+    <td><span class="block-name">#5 What to expect ★</span><span class="cond-badge cond-c2">C2 Belief</span></td>
+    <td><span class="pill p-compress">Compressed</span>"Most users feel a difference within the first use or two." No multi-week timeline needed.</td>
+    <td><span class="pill p-centre">Centrepiece block</span>Full phase-by-phase: Week 1–2 (adapting), Week 3–4 (noticeable change), Month 2–3 (sustained). Include what "no result yet" looks like and why it's normal.</td>
+    <td>"Skin typically feels more hydrated within 5–7 days. Visible tone improvement at 3–4 weeks." Usage-dependent framing.</td>
+    <td>Longer horizon: Month 1 (routine establishing), Month 2–3 (measurable markers shifting), ongoing. Normalise slow change — anxiety is high for this archetype.</td>
+  </tr>
+
+  <tr>
+    <td><span class="block-name">#8 Social proof</span><span class="cond-badge cond-c2">C2 Belief</span></td>
+    <td>1–2 reviews referencing speed of relief: "Felt better that same evening."</td>
+    <td><span class="pill p-depth">Dual deployment</span>Z2: 3 curated reviews with timeline-echo headings immediately after #5 ("Noticed real change around week 4"). Z4: full UGC aggregate block.</td>
+    <td><span class="pill p-depth">Dual deployment</span>Z2: 3 curated reviews with timeline-echo headings immediately after #5 — headings mirror the phase ("Less Fall — Week 3", "Growth Visible — Month 3"). Z4: full UGC aggregate block. Single-zone placement is insufficient for Topical.</td>
+    <td>Reviews from people managing conditions: "My numbers have been stable since I added this." Mindset diversity across reviews is important.</td>
+  </tr>
+
+  <!-- ZONE 3 -->
+  <tr class="zone-row"><td colspan="5"><span class="zone-label">Zone 3 — Remove hesitation</span></td></tr>
+
+  <tr>
+    <td><span class="block-name">#7 Safety check</span><span class="cond-badge cond-c2">C2 Belief</span></td>
+    <td>Standard Zone 3. "Safe for daily use. Avoid if allergic to [ingredient]."</td>
+    <td>Standard Zone 3. Pregnancy/nursing note. No significant interactions for most slow-burn ingestibles.</td>
+    <td><span class="pill p-up">Elevated</span>Early skin reaction is normal — address proactively. Patch test guidance. Pregnancy-safe flag if applicable.</td>
+    <td><span class="pill p-z1">Moves to Zone 1</span>Safety is first concern. Drug interactions for common medications (e.g. Glymin: metformin). All three mindsets addressed explicitly.</td>
+  </tr>
+
+  <tr>
+    <td><span class="block-name">#6 How to use (expanded)</span><span class="cond-badge cond-c2">C2 Belief</span></td>
+    <td>Typically not needed — instruction simple enough for Zone 1 alone.</td>
+    <td>Expand only if product has multiple steps or dietary co-conditions. Otherwise Zone 1 headline is sufficient.</td>
+    <td><span class="pill p-depth">Always expand</span>Step-by-step technique, frequency, carrier oil ratio, storage, re-application timing.</td>
+    <td>Expand: timing relative to meals/medication, what to do if dose missed, how to build the habit.</td>
+  </tr>
+
+  <tr>
+    <td><span class="block-name">#9 Value framing (full)</span><span class="cond-badge cond-c3">C3 Ease of starting</span></td>
+    <td>Trial/starter framing: "Try a single pack first." Low-stakes entry.</td>
+    <td><span class="pill p-depth">Programme cross-sell</span>Regimen recommendation prominent: "Pair with Brahmi Pearls for complete stress management." Starter size if available. AOV expansion lives here.</td>
+    <td>Usage economy: "One bottle lasts 3 months — ₹97/month." Regimen pairing with complementary internal product.</td>
+    <td>Programme framing essential: "Part of a daily wellness routine alongside [paired product]." Subscription/repeat-buy framing natural here.</td>
+  </tr>
+
+  <tr>
+    <td><span class="block-name">#10 Transaction confidence</span><span class="cond-badge cond-c4">C4 Ease of completing</span></td>
+    <td>Standard: UPI prominent, 2–4 day delivery, returns policy, prepaid incentive.</td>
+    <td>Standard + post-purchase promise when WhatsApp flows are live: "Week-by-week guidance after purchase."</td>
+    <td>Standard. Add "sealed / spill-proof packaging" note if applicable for oils.</td>
+    <td>Standard + post-purchase promise elevated: ongoing condition consumer needs ongoing support signal.</td>
+  </tr>
+
+  <!-- ZONE 4 -->
+  <tr class="zone-row"><td colspan="5"><span class="zone-label">Zone 4 — Extra depth (sceptics &amp; returning visitors)</span></td></tr>
+
+  <tr>
+    <td><span class="block-name">Zone 4 emphasis</span></td>
+    <td>Minimal. Sceptics rare for fast-relief. FAQs sufficient.</td>
+    <td><span class="pill p-depth">Full Zone 4</span>Extended ingredient detail, clinical references, full review set, format comparison if multi-format.</td>
+    <td>Detailed ingredient sourcing, full patch-test FAQ, extended usage scenarios (body, face, scalp). Full UGC review aggregate (completes the dual #8 deployment).</td>
+    <td><span class="pill p-diff">Safety-dominant</span>Full drug-interaction table, contraindication list, sourcing, clinic credibility, full FAQ. Hard dependency: medical vetting required.</td>
+  </tr>
+
+  <!-- WELLNESS RITUAL -->
+  <tr class="zone-row"><td colspan="5"><span class="zone-label">Wellness ritual modification — 2–3 SKUs (e.g. Chyavanprash): slow-burn base with 3 swaps</span></td></tr>
+
+  <tr>
+    <td><span class="block-name">Applicable swaps</span></td>
+    <td><span class="pill p-na">N/A</span></td>
+    <td>
+      <span class="pill p-up">Applies here</span>
+      Block #5: replace timeline with "daily practice" framing.<br>
+      Block #2: shift from outcome to protection/maintenance.<br>
+      Block #8: shift to sustained-practice testimonials.
+    </td>
+    <td><span class="pill p-na">N/A</span></td>
+    <td><span class="pill p-na">N/A</span></td>
+  </tr>
+
+</tbody>
+</table>
+
+<!-- Legend -->
+<div class="legend">
+  <span class="legend-label">Key:</span>
+  <span class="pill p-compress">Compressed vs standard</span>
+  <span class="pill p-up">Elevated / moved up</span>
+  <span class="pill p-depth">Full depth / centrepiece</span>
+  <span class="pill p-z1">Moves to Zone 1</span>
+  <span class="pill p-diff">Archetype-specific rule</span>
+  <span class="pill p-centre">Centrepiece block</span>
+  <span class="pill p-na">Not applicable</span>
+  &nbsp;&nbsp;
+  <span class="cond-badge cond-c1">C1 Relevance</span>
+  <span class="cond-badge cond-c2">C2 Belief</span>
+  <span class="cond-badge cond-c3">C3 Ease of starting</span>
+  <span class="cond-badge cond-c4">C4 Ease of completing</span>
+</div>
+
+</body>
+</html>
