@@ -2,7 +2,7 @@
 
 > **For Claude Code.** This file is the single source of truth for building the Myaxyl Oil PDP. It pairs with the Kerala Ayurveda design system (`design-system/`) and the KAL DTC Conversion Framework v3.1.
 >
-> **Build target:** A single-page mobile-first PDP for Myaxyl Oil at `myaxyl/index.html`, following the architecture defined in Part 1 and populated with the copy and data in Part 2.
+> **Build target:** A single-page mobile-first PDP for Myaxyl Oil at `docs/index.html`, following the architecture defined in Part 1 and populated with the copy and data in Part 2.
 >
 > **Authored by:** Sripath (KAL DTC conversion)
 > **Revision:** v1.0 — April 2026
@@ -15,7 +15,7 @@
 ## 1.1 Project setup
 
 1. Unzip the design system folder as `design-system/` at the project root.
-2. Create `myaxyl/` alongside it. Output target: `myaxyl/index.html` (single-file HTML with inline JSX, React 18 + Babel Standalone via CDN).
+2. Create `docs/` alongside it. Output target: `docs/index.html` (single-file HTML with inline JSX, React 18 + Babel Standalone via CDN).
 3. Link CSS in this order inside `<head>`:
    ```html
    <link rel="stylesheet" href="../design-system/colors_and_type.css">
@@ -225,7 +225,7 @@ The 6 gallery hero images are stored at `design-system/assets/hero-1.webp` throu
 | Myaxyl Cream (regimen partner) | `https://keralaayurveda.com/cdn/shop/files/MyaxylCream.png` |
 | Yogaraja Guggulu Tablets (regimen partner) | `https://keralaayurveda.com/cdn/shop/files/YogarajaGugguluTablets.png` |
 
-Reference these directly in `<img src="...">` or download into `myaxyl/assets/` if local hosting is preferred.
+Reference these directly in `<img src="...">` or download into `docs/assets/` if local hosting is preferred.
 
 ### Placeholder tiles — for imagery not yet available
 

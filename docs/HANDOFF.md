@@ -2,7 +2,7 @@
 
 **Build date:** 2026-04-19
 **Spec version:** `MYAXYL_OIL_PDP_CONTENT.md` v1.0
-**Output:** `myaxyl/index.html` + `myaxyl/myaxyl.css`
+**Output:** `docs/index.html` + `docs/myaxyl.css`
 
 ---
 
@@ -56,7 +56,7 @@ Placeholder tiles use the pattern defined in §1.5 of the spec: `--cream` backgr
 - **Ingredient + timeline + sesame-base + lifestyle photography** — commission and replace placeholder tiles.
 - **Review seeding** — `215` review count + `4.7` rating are hardcoded; pull live from Shopify at final build or post-launch.
 - **Zone 2 curated testimonials** (Priya M., Anil R.) — await validation from the review seeding agency. Copy is per spec §2.14; swap in validated attribution post-seed.
-- **Regimen partner images** — load from Shopify CDN (`MyaxylCream.png`, `YogarajaGugguluTablets.png`). Consider downloading into `myaxyl/assets/` for offline builds.
+- **Regimen partner images** — load from Shopify CDN (`MyaxylCream.png`, `YogarajaGugguluTablets.png`). Consider downloading into `docs/assets/` for offline builds.
 
 ---
 

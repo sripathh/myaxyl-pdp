@@ -46,7 +46,7 @@ project-root/
 │       └── index.html
 ├── framework/                         ← strategy docs (reference)
 │   └── KAL_PDP_Archetype_Framework.html
-└── myaxyl/                            ← build output folder
+└── docs/                            ← build output folder
     ├── index.html
     ├── myaxyl.css                     ← additive overrides only
     ├── assets/                        ← Myaxyl-specific imagery
@@ -60,8 +60,8 @@ Never modify files in `design-system/` or `framework/`. These are read-only inpu
 ## Build conventions
 
 ### File structure
-- **`myaxyl/index.html`** — single-file HTML with inline React and Babel (React 18 + Babel Standalone via CDN)
-- **`myaxyl/myaxyl.css`** — additive styles only. All base tokens come from `design-system/colors_and_type.css`. All component patterns extend from `design-system/ui_kits/pdp/pdp.css`.
+- **`docs/index.html`** — single-file HTML with inline React and Babel (React 18 + Babel Standalone via CDN)
+- **`docs/myaxyl.css`** — additive styles only. All base tokens come from `design-system/colors_and_type.css`. All component patterns extend from `design-system/ui_kits/pdp/pdp.css`.
 - Link order in `<head>`:
   ```html
   <link rel="stylesheet" href="../design-system/colors_and_type.css">
@@ -76,7 +76,7 @@ Never modify files in `design-system/` or `framework/`. These are read-only inpu
 
 ### Asset resolution
 - **Icons** — `design-system/assets/*.svg` (direct reference)
-- **Product photography** — pull from Shopify CDN URLs specified in the content spec (§1.5), or download into `myaxyl/assets/`
+- **Product photography** — pull from Shopify CDN URLs specified in the content spec (§1.5), or download into `docs/assets/`
 - **Missing photography** (ingredients, some timeline imagery) — use the placeholder tile pattern defined in the content spec. Flag in handoff notes.
 
 ---
@@ -147,7 +147,7 @@ Unless the content spec explicitly includes these, do not build them:
 
 ## Handoff discipline
 
-When the build is complete, produce `myaxyl/HANDOFF.md` covering:
+When the build is complete, produce `docs/HANDOFF.md` covering:
 
 1. What's built
 2. What's placeholdered and why (missing assets, pending content)
@@ -164,7 +164,7 @@ Keep it brief. The content spec is the detailed doc; the handoff is the status u
 **Build:** Myaxyl Oil PDP
 **Spec:** `MYAXYL_OIL_PDP_CONTENT.md`
 **Archetype treatment:** Fast-relief primary with Topical modifiers applied in full; long-term recovery benefit retained as core differentiation (Zone 2 depth is preserved).
-**Output:** `myaxyl/index.html` + `myaxyl/myaxyl.css`
+**Output:** `docs/index.html` + `docs/myaxyl.css`
 
 The content spec is self-contained — every section's copy, structured data, component structure, and compliance checks are in that single file. Read it end-to-end before writing any code.
 
