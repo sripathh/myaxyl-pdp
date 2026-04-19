@@ -1,6 +1,7 @@
 # Myaxyl Oil PDP — Handoff
 
 **Build date:** 2026-04-19
+**Content update:** 2026-04-19 — 9 changes applied from `MYAXYL_CONTENT_GAPS_UPDATE.md` (mechanism copy, Rasna card, Lemongrass card, What's Out 4th item, Compare table 5 rows, Step 02, Accordion 5th item, 3 FAQ additions)
 **Spec version:** `MYAXYL_OIL_PDP_CONTENT.md` v1.0
 **Output:** `docs/index.html` + `docs/myaxyl.css`
 
@@ -26,7 +27,7 @@ All 21 sections per §1.3 of the content spec, in the specified order (persona t
 14. Testimonials (2 timeframe-tagged, amber-top-border tag)
 15. Compare (Myaxyl vs Generic Pain Spray)
 16. Application guide (Warm · Massage · Leave)
-17. Accordion — Go deeper (4 items)
+17. Accordion — Go deeper (5 items — preparation, safety, full ingredients, usage, Ayurvedic science)
 18. Reviews (aggregate + 2 extended cards + outline CTA)
 19. Closing (heritage echo + off-yellow CTA + per-session anchor)
 20. Sticky buy bar (mobile ATC-only / desktop full inline)
@@ -87,7 +88,7 @@ Placeholder tiles use the pattern defined in §1.5 of the spec: `--cream` backgr
 
 ### Framework (§3.5)
 - [x] #2 outcome promise leads with speed ("cooling within minutes") then recovery ("over the days that follow")
-- [x] #4 mechanism is full-depth — 5 sentences covering dual action + ingredients + "supports, doesn't suppress" differentiation
+- [x] #4 mechanism is full-depth — 5 sentences: dual action, lipid-recognising membrane explanation (why oil > aerosol), "at every stage of recovery" claim, Rasna oxidative stress function, closing result line
 - [x] #4a sensory callout is a standalone section (Sensory component)
 - [x] #5 timeline uses Minutes / Day 1 / Week 2+ (compressed span)
 - [x] #6 usage is in Zone 1 (ritual panel above fold) and expanded in Zone 3 (app guide)

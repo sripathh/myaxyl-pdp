@@ -242,7 +242,7 @@ function Mechanism() {
       <div className="mechanism__eyebrow">How it works</div>
       <h2 className="mechanism__title">Two actions. One oil.</h2>
       <div className="mechanism__body">
-        <p>Relief you feel within minutes — cooling and gentle warmth as the formula absorbs. Recovery you feel in the days that follow — Sesame oil carries the herbal actives into deep tissue where the healing happens. Devadaru and Nandivriksha calm the inflammatory pathway without blocking it. Rasna supports tissue repair. Your body's inflammatory response is how it heals — Myaxyl supports that process, it doesn't suppress it.</p>
+        <p>Relief you feel within minutes — cooling and gentle warmth as the formula absorbs. Recovery you feel in the days that follow. Sesame oil carries the herbal actives into deep tissue — neurons are wrapped in a lipid-recognising membrane, which is why an oil-based formula reaches pain pathways at the neural level while an aerosol spray cannot. Devadaru and Nandivriksha support the body's inflammatory response at every stage of recovery — not just the acute phase, but through the full healing cycle. Rasna helps reduce oxidative stress at the injury site, supporting tissue regeneration from within. The result is relief that comes quickly and recovery that holds.</p>
       </div>
     </section>
   );
@@ -316,7 +316,7 @@ function Ingredients() {
   const data = [
     {name:"Devadaru", latin:"Cedrus deodara", role:"Pain Relief", roleClass:"role--pain-relief", desc:"Himalayan cedar with alpha and beta himachalene — the pain-relief action. Sourced from Nepal.", placeholder:"Devadaru"},
     {name:"Nandivriksha", latin:"Tabernaemontana divaricata", role:"Anti-Inflammatory", roleClass:"role--anti-inflammatory", desc:"Alkaloids and terpenoids calm inflammatory cytokines. Native to Kerala — used as fresh juice.", placeholder:"Nandivriksha"},
-    {name:"Rasna", latin:"Alpinia galanga", role:"Recovery", roleClass:"role--recovery", desc:"Traditionally used to support tissue repair in musculoskeletal care. Sourced from West Bengal.", placeholder:"Rasna"},
+    {name:"Rasna", latin:"Alpinia galanga", role:"Recovery", roleClass:"role--recovery", desc:"Helps reduce inflammatory cytokines, calms the immune response at the injury site, and supports tissue regeneration by reducing oxidative stress. Traditionally used in musculoskeletal care. Sourced from West Bengal.", placeholder:"Rasna"},
     {name:"Sesame Oil", latin:"Sesamum indicum", role:"Absorption", roleClass:"role--absorption", desc:"The classical base — 45-63% derivable oil content. Carries the actives into deep tissue.", placeholder:"Sesame"},
   ];
   return (
@@ -365,7 +365,7 @@ function SesameBase() {
         <article className="sesame-card">
           <div className="sesame-card__icon placeholder-tile placeholder-tile--circle"><span>Lemongrass</span></div>
           <h3 className="sesame-card__name">Lemongrass</h3>
-          <p className="sesame-card__desc">Gentle warmth. Aids detox by improving circulation to the tissues.</p>
+          <p className="sesame-card__desc">Gentle warmth. Increases local blood flow to deliver oxygen and nutrients to the healing tissue — and helps clear inflammatory byproducts from the site.</p>
         </article>
       </div>
     </section>
@@ -411,6 +411,10 @@ function WhatsIn() {
             <span className="whats-in__icon whats-in__icon--no"><img src={`${DS}/i-x.svg`} alt=""/></span>
             <div><div className="whats-in__item-title">No synthetic fragrance or mineral oil</div></div>
           </div>
+          <div className="whats-in__item whats-in__item--no">
+            <span className="whats-in__icon whats-in__icon--no"><img src={`${DS}/i-x.svg`} alt=""/></span>
+            <div><div className="whats-in__item-title">No dependency, tolerance build-up, or resistance risk</div></div>
+          </div>
         </div>
       </div>
     </section>
@@ -445,10 +449,11 @@ function Testimonials() {
 /* ============ COMPARE ============ */
 function Compare() {
   const rows = [
-    {label:"Mechanism", us:"Supports inflammatory response", them:"Blocks pain signal"},
+    {label:"Mechanism", us:"Supports inflammatory response at every stage", them:"Blocks pain signal"},
     {label:"Absorption", us:"Deep tissue via sesame oil base", them:"Superficial sensory block"},
+    {label:"Collagen synthesis", us:"Unaffected — tissue repair continues", them:"Inhibited — slows repair and regeneration"},
     {label:"Recovery", us:"Tissue repair and regeneration", them:"No curative action"},
-    {label:"Dependency", us:"None reported", them:"Tolerance risk with repeated use"},
+    {label:"Dependency", us:"No tolerance, no resistance, no rebound", them:"Tolerance and dependency risk with repeated use"},
   ];
   return (
     <section className="compare">
@@ -484,7 +489,7 @@ function Compare() {
 function AppGuide() {
   const steps = [
     {num:"01", label:"Warm", desc:"Self-warming formula. No heating needed — just a few drops in the palm."},
-    {num:"02", label:"Massage", desc:"Circular motions in the direction of hair growth. Let each layer absorb before adding more."},
+    {num:"02", label:"Massage", desc:"Circular motions in the direction of hair growth. Light pressure — the formula penetrates on its own. No deep kneading required."},
     {num:"03", label:"Leave", desc:"Absorbs in about a minute. Leave on, or rinse with warm water and mild soap if preferred. Apply 1-2 times daily."},
   ];
   return (
@@ -517,6 +522,7 @@ function Accordion() {
     {label:"Safety & side effects", content:<p>For external use only. Patch test before first application. Avoid open wounds — apply around the area instead. Avoid contact with eyes, nose, and mouth. Rare: mild tingling or warmth in sensitive users — usually subsides within minutes. Safe during pregnancy for external use. Adult supervision recommended for younger children.</p>},
     {label:"Full ingredient list", content:<p>Devadaru (<em>Cedrus deodara</em>), Nandivriksha (<em>Tabernaemontana divaricata</em>), Rasna (<em>Alpinia galanga</em>), Sesame oil (<em>Sesamum indicum</em>) base, Eucalyptus oil, Lemongrass oil, Peppermint essential oil. No synthetic fragrance. No mineral oil. No parabens.</p>},
     {label:"When not to use", content:<p>Not to be applied directly on open wounds or broken skin. Not to be taken internally. If rigorous exercise is immediately planned, allow 10-15 minutes after application. Avoid cold showers or cold beverages immediately post-application — they work against the oil's warming action.</p>},
+    {label:"The Ayurvedic science — why oil, why these herbs.", content:<p>In Ayurveda, pain (Ruja) is the classical expression of aggravated Vata dosha. External injury — Aghata — disturbs Vata in the Asthi (bone) and Mamsa (muscle) tissues, triggering a tridoshic inflammation: heat from aggravated Pitta, swelling from aggravated Kapha, pain and stiffness from Vata. The classical first-line treatment for this presentation is Bahya Snehan — external application of a lipid-based formulation to the affected tissue. Sesame oil is the classical base for Vata-predominant musculoskeletal conditions. Devadaru and Nandivriksha help balance the vitiated Vata and Pitta; Rasna supports the lower extremities (Adhyavata); lemongrass and eucalyptus address the Kapha component. The treatment goal is Tridosha balance — restoring the body's natural equilibrium, not suppressing the symptoms of its recovery.</p>},
   ];
   const [open, setOpen] = useState([0]);
   const toggle = (idx) => setOpen(open.includes(idx) ? open.filter(i=>i!==idx) : [...open, idx]);
