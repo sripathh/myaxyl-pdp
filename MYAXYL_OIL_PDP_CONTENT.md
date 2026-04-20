@@ -401,7 +401,7 @@ Dynamic state — the price block updates on size change. 60 ml does not carry a
 
 **Body paragraph:**
 ```
-Relief you feel within minutes — cooling and gentle warmth as the formula absorbs. Recovery you feel in the days that follow. Sesame oil carries the herbal actives into deep tissue — neurons are wrapped in a lipid-recognising membrane, which is why an oil-based formula reaches pain pathways at the neural level while an aerosol spray cannot. Devadaru and Nandivriksha support the body's inflammatory response at every stage of recovery — not just the acute phase, but through the full healing cycle. Rasna helps reduce oxidative stress at the injury site, supporting tissue regeneration from within. The result is relief that comes quickly and recovery that holds.
+Relief you feel within minutes — cooling and gentle warmth as the formula absorbs. Recovery you feel in the days that follow — sesame oil is a lipid, recognised by the body's neural tissue as its natural carrier into the nerve pathway where pain originates. Devadaru and Nandivriksha support the body's inflammatory response at every stage of recovery — not just the acute phase, but through the full healing cycle. Rasna helps reduce oxidative stress at the injury site, supporting tissue regeneration from within. The body heals through inflammation — Myaxyl supports that process, it doesn't suppress it.
 ```
 
 ## 2.8 First-use sensory callout (§8)
@@ -457,7 +457,7 @@ A cooling sensation on contact — the eucalyptus settling in. Within seconds, a
 |---|---|---|---|---|
 | Devadaru | *Cedrus deodara* | Pain Relief | Himalayan cedar with alpha and beta himachalene — the pain-relief action. Sourced from Nepal. | *Devadaru* |
 | Nandivriksha | *Tabernaemontana divaricata* | Anti-Inflammatory | Alkaloids and terpenoids calm inflammatory cytokines. Native to Kerala — used as fresh juice. | *Nandivriksha* |
-| Rasna | *Alpinia galanga* | Recovery | Helps reduce inflammatory cytokines, calms the immune response at the injury site, and supports tissue regeneration by reducing oxidative stress. Traditionally used in musculoskeletal care. Sourced from West Bengal. | *Rasna* |
+| Rasna | *Alpinia galanga* | Recovery | Helps reduce oxidative stress at the injury site — supporting tissue regeneration, calming inflammation, and quieting the immune response. Traditionally used in musculoskeletal care. Sourced from West Bengal. | *Rasna* |
 | Sesame Oil | *Sesamum indicum* | Absorption | The classical base — 45-63% derivable oil content. Carries the actives into deep tissue. | *Sesame* |
 
 **Role badge CSS** (add to `myaxyl.css`):
@@ -539,11 +539,11 @@ Circle icon tiles at 80px diameter. Hero card (Sesame Oil) spans wider on deskto
 
 | Attribute | Myaxyl Oil | Generic Pain Spray |
 |---|---|---|
-| Mechanism | Supports inflammatory response at every stage | Blocks pain signal |
+| Mechanism | Supports inflammatory response | Blocks pain signal |
 | Absorption | Deep tissue via sesame oil base | Superficial sensory block |
-| Collagen synthesis | Unaffected — tissue repair continues | Inhibited — slows repair and regeneration |
+| Collagen synthesis | No inhibition | Inhibited — slows repair and regeneration |
 | Recovery | Tissue repair and regeneration | No curative action |
-| Dependency | No tolerance, no resistance, no rebound | Tolerance and dependency risk with repeated use |
+| Dependency | No dependency, no tolerance, no resistance | Dependency and tolerance risk with repeated use |
 
 No editorialising above or below the table. Facts in columns. The table now has 5 rows — ensure the prototype renders all 5.
 
@@ -559,7 +559,7 @@ No editorialising above or below the table. Facts in columns. The table now has 
 | Step | Label | Description |
 |---|---|---|
 | 01 | WARM | Self-warming formula. No heating needed — just a few drops in the palm. |
-| 02 | MASSAGE | Circular motions in the direction of hair growth. Light pressure — the formula penetrates on its own. No deep kneading required. |
+| 02 | MASSAGE | Gentle circular motions over the affected area. Light pressure — the formula penetrates on its own. No deep kneading required. |
 | 03 | LEAVE | Absorbs in about a minute. Leave on, or rinse with warm water and mild soap if preferred. Apply 1-2 times daily. |
 
 ## 2.18 Accordion (§18)
@@ -575,7 +575,7 @@ No editorialising above or below the table. Facts in columns. The table now has 
 | Safety & side effects | For external use only. Patch test before first application. Avoid open wounds — apply around the area instead. Avoid contact with eyes, nose, and mouth. Rare: mild tingling or warmth in sensitive users — usually subsides within minutes. Safe during pregnancy for external use. Adult supervision recommended for younger children. |
 | Full ingredient list | Devadaru (*Cedrus deodara*), Nandivriksha (*Tabernaemontana divaricata*), Rasna (*Alpinia galanga*), Sesame oil (*Sesamum indicum*) base, Eucalyptus oil, Lemongrass oil, Peppermint essential oil. No synthetic fragrance. No mineral oil. No parabens. |
 | When not to use | Not to be applied directly on open wounds or broken skin. Not to be taken internally. If rigorous exercise is immediately planned, allow 10-15 minutes after application. Avoid cold showers or cold beverages immediately post-application — they work against the oil's warming action. |
-| The Ayurvedic science — why oil, why these herbs. | In Ayurveda, pain (Ruja) is the classical expression of aggravated Vata dosha. External injury — Aghata — disturbs Vata in the Asthi (bone) and Mamsa (muscle) tissues, triggering a tridoshic inflammation: heat from aggravated Pitta, swelling from aggravated Kapha, pain and stiffness from Vata. The classical first-line treatment for this presentation is Bahya Snehan — external application of a lipid-based formulation to the affected tissue. Sesame oil is the classical base for Vata-predominant musculoskeletal conditions. Devadaru and Nandivriksha help balance the vitiated Vata and Pitta; Rasna supports the lower extremities (Adhyavata); lemongrass and eucalyptus address the Kapha component. The treatment goal is Tridosha balance — restoring the body's natural equilibrium, not suppressing the symptoms of its recovery. |
+| The Ayurvedic science — why oil, why these herbs | In Ayurveda, pain (Ruja) is the classical expression of aggravated Vata dosha. External injury — Aghata — disturbs Vata in the Asthi (bone) and Mamsa (muscle) tissues, triggering a tridoshic response: heat and redness from aggravated Pitta, swelling from aggravated Kapha, pain and stiffness from Vata. The classical first-line treatment for this presentation is Bahya Snehan — external application of a lipid-based formulation to the affected tissue. Sesame oil is the classical base for Vata-predominant musculoskeletal conditions. Devadaru and Nandivriksha help balance the vitiated Vata and Pitta. Rasna addresses Adhyavata — the Vata governing the lower joints and extremities. Lemongrass and eucalyptus support the Kapha component. The treatment goal is Tridosha balance — restoring the body's natural equilibrium, not suppressing its natural healing response. |
 
 ## 2.19 Reviews (§19)
 
@@ -648,13 +648,10 @@ Myaxyl is external-use only. It does not interact with oral medication at the sy
 The 200 ml bottle covers approximately 30 sessions for a single joint area, used 1-2 times daily. Roughly ₹15 per session.
 
 **Q: Will the pain return once I stop using Myaxyl?**
-Myaxyl supports tissue repair rather than masking the pain signal — so when the underlying tissue heals, the tendency toward recurring pain reduces. Suppressing inflammation without supporting recovery risks incomplete healing, which increases the likelihood of the same injury recurring and the pain returning. Continued use through the recovery phase, not just the acute episode, is where the long-term benefit is built.
-
-**Q: What is the risk of staying on pain-suppressing sprays long-term?**
-Repeated suppression of the inflammatory response — without supporting recovery — can lead to incomplete tissue healing, creating weak spots that are more vulnerable to re-injury. Over time, prolonged inflammation that does not fully resolve can contribute to chronic pain that is increasingly difficult to address with topical treatment alone. Myaxyl is designed to support the body's natural healing cycle at every stage, reducing the likelihood of this progression.
+Myaxyl supports tissue repair rather than masking the pain signal — so when the underlying tissue heals, the tendency toward recurring pain reduces. When inflammation is managed without supporting the healing process, the underlying tissue may not fully recover, which means the same injury can recur more easily. Continued use through the recovery phase, not just the acute episode, is where the long-term benefit is built.
 
 **Q: Should I rest the injury while using Myaxyl?**
-Myaxyl helps with pain and inflammation quickly — but the tissue itself needs time to restore its structural strength. In Ayurveda, the first principle of treatment for acute injury is Nidan Parivarjan — removing the causative factor, meaning reduced load on the affected tissue. Muscle, ligaments, and tendons typically need approximately 4-5 days of reduced activity before they can safely resume full load. Myaxyl supports recovery during this rest window. Resuming full activity before the tissue has recovered extends the healing timeline regardless of what treatment is applied.
+Myaxyl helps with pain and inflammation quickly — but the tissue itself needs time to heal. In Ayurveda, the first principle of treatment for acute injury is Nidan Parivarjan — removing the causative factor, meaning reduced load on the affected tissue. Muscle, ligaments, and tendons typically need approximately 4-5 days of reduced activity before they can safely resume full load. Myaxyl supports recovery during this rest window. Resuming full activity before the tissue has recovered extends the healing timeline regardless of what treatment is applied.
 
 ## 3.2 Additional testimonials (rotation pool)
 
